@@ -1,0 +1,21 @@
+# Ignore artifacts:
+dist
+build
+coverage
+.firebase
+
+# Ignore all HTML files:
+*.html
+
+# Ignore files:
+*.log
+*.lock
+yarn.lock
+package-lock.json
+
+# Ignore folders:
+node_modules
+.git
+.next
+.cache
+public
