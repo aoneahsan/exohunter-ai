@@ -12,7 +12,9 @@ import {
   BookOpen,
   Compass,
   Globe,
-  Sparkles
+  Sparkles,
+  Github,
+  ExternalLink
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
@@ -100,6 +102,17 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex md:items-center md:gap-4">
+            <a
+              href="https://github.com/aoneahsan/exohunter-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-sm font-medium text-gray-300 transition-colors hover:text-purple-400"
+              title="View Source Code on GitHub"
+            >
+              <Github className="h-5 w-5" />
+              <span className="hidden lg:inline">GitHub</span>
+            </a>
+            <div className="h-6 w-px bg-gray-700" />
             {currentUser ? (
               <>
                 <Link to="/profile">
@@ -240,6 +253,18 @@ export const Navbar: React.FC = () => {
                 </Link>
               </>
             )}
+            
+            <div className="my-2 border-t border-space-700" />
+            <a
+              href="https://github.com/aoneahsan/exohunter-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-space-800 hover:text-white"
+            >
+              <Github className="h-5 w-5" />
+              View Source Code
+              <ExternalLink className="h-4 w-4 ml-auto" />
+            </a>
           </div>
         </motion.div>
       )}

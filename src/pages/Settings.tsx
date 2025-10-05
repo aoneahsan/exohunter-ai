@@ -25,6 +25,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
+import { NotificationSettings } from '@/components/NotificationSettings';
 import toast from 'react-hot-toast';
 
 export default function Settings() {
@@ -261,65 +262,7 @@ export default function Settings() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="bg-slate-800/50 border-purple-500/20">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Bell className="mr-2" size={20} />
-                  Notification Preferences
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <h4 className="text-white font-medium flex items-center">
-                      <Mail className="mr-2" size={16} />
-                      Email Notifications
-                    </h4>
-                    <div className="space-y-3">
-                      {[
-                        { key: 'emailNotifications', label: 'General email notifications', value: settings.emailNotifications },
-                        { key: 'weeklyNewsletter', label: 'Weekly newsletter', value: settings.weeklyNewsletter },
-                        { key: 'discoveryAlerts', label: 'New discovery alerts', value: settings.discoveryAlerts },
-                        { key: 'achievementNotifications', label: 'Achievement notifications', value: settings.achievementNotifications }
-                      ].map((item) => (
-                        <label key={item.key} className="flex items-center space-x-3 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={item.value}
-                            onChange={(e) => setSettings(prev => ({ ...prev, [item.key]: e.target.checked }))}
-                            className="w-4 h-4 text-purple-600 bg-slate-700 border-slate-600 rounded focus:ring-purple-500"
-                          />
-                          <span className="text-gray-300">{item.label}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h4 className="text-white font-medium flex items-center">
-                      <Smartphone className="mr-2" size={16} />
-                      Push Notifications
-                    </h4>
-                    <div className="space-y-3">
-                      {[
-                        { key: 'pushNotifications', label: 'Browser push notifications', value: settings.pushNotifications },
-                        { key: 'communityUpdates', label: 'Community updates', value: settings.communityUpdates }
-                      ].map((item) => (
-                        <label key={item.key} className="flex items-center space-x-3 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={item.value}
-                            onChange={(e) => setSettings(prev => ({ ...prev, [item.key]: e.target.checked }))}
-                            className="w-4 h-4 text-purple-600 bg-slate-700 border-slate-600 rounded focus:ring-purple-500"
-                          />
-                          <span className="text-gray-300">{item.label}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <NotificationSettings />
           </motion.div>
 
           {/* Privacy Settings */}

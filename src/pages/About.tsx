@@ -355,11 +355,69 @@ export default function About() {
           </div>
         </motion.div>
 
+        {/* Open Source Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="mb-12"
+        >
+          <Card className="bg-gradient-to-br from-gray-800/50 to-slate-800/50 border-purple-500/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <div className="bg-white/10 rounded-full p-4 w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                  <Github className="text-white" size={40} />
+                </div>
+                <h2 className="text-3xl font-bold text-white mb-4">100% Open Source</h2>
+                <p className="text-gray-300 max-w-2xl mx-auto mb-6">
+                  ExoHunter AI is completely open source and available on GitHub. 
+                  We believe in transparency, collaboration, and community-driven development.
+                </p>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a
+                    href="https://github.com/aoneahsan/exohunter-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all inline-flex items-center gap-2"
+                  >
+                    <Github className="w-5 h-5" />
+                    View Repository
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                  <a
+                    href="https://github.com/aoneahsan/exohunter-ai/fork"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white/10 backdrop-blur-lg text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/20 transition-all border border-white/20 inline-flex items-center gap-2"
+                  >
+                    <Code className="w-5 h-5" />
+                    Fork Project
+                  </a>
+                </div>
+                <div className="grid grid-cols-3 gap-4 mt-8">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-400">MIT</div>
+                    <div className="text-gray-400 text-sm">License</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-400">100%</div>
+                    <div className="text-gray-400 text-sm">Free & Open</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-400">Active</div>
+                    <div className="text-gray-400 text-sm">Development</div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* Impact Statistics */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.65 }}
           className="mb-12"
         >
           <Card className="bg-slate-800/50 border-purple-500/20">
@@ -408,13 +466,19 @@ export default function About() {
                   <Mail className="mr-2" size={16} />
                   Contact Us
                 </Button>
-                <Button 
-                  variant="outline" 
-                  className="bg-slate-700 border-slate-600 text-white hover:bg-slate-600"
+                <a
+                  href="https://github.com/aoneahsan/exohunter-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Github className="mr-2" size={16} />
-                  View Source Code
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    className="bg-slate-700 border-slate-600 text-white hover:bg-slate-600"
+                  >
+                    <Github className="mr-2" size={16} />
+                    View Source Code
+                  </Button>
+                </a>
                 <Button 
                   variant="outline" 
                   className="bg-slate-700 border-slate-600 text-white hover:bg-slate-600"

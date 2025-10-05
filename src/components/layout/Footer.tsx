@@ -20,10 +20,11 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com/aoneahsan"
+                href="https://github.com/aoneahsan/exohunter-ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-purple-400 transition-colors"
+                title="View Source Code on GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -99,8 +100,13 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="text-sm text-gray-400 hover:text-purple-400"
                 >
-                  Documentation
+                  Source Code
                 </a>
+              </li>
+              <li>
+                <Link to="/presentation" className="text-sm text-gray-400 hover:text-purple-400">
+                  Presentation
+                </Link>
               </li>
               <li>
                 <a 

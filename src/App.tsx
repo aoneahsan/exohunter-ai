@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Layout } from '@/components/layout/Layout';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
+import { initializeOneSignal } from '@/services/oneSignal';
 
 // Pages
 import Landing from '@/pages/Landing';
@@ -15,8 +17,14 @@ import About from '@/pages/About';
 import Analyzer from '@/pages/Analyzer';
 import Login from '@/pages/Login';
 import Signup from '@/pages/Signup';
+import Presentation from '@/pages/Presentation';
 
 function App() {
+  useEffect(() => {
+    // Initialize OneSignal when app loads
+    initializeOneSignal();
+  }, []);
+
   return (
     <Router>
       <AuthProvider>
@@ -30,6 +38,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
+            <Route path="presentation" element={<Presentation />} />
             
             {/* Protected Routes */}
             <Route

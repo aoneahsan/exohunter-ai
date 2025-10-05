@@ -3,11 +3,13 @@ import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { NotificationBanner } from '@/components/NotificationBanner';
 
 export const Layout: React.FC = () => {
   return (
     <div className="min-h-screen bg-space-900 text-white flex flex-col">
       <Navbar />
+      <NotificationBanner />
       <main className="flex-1">
         <Outlet />
       </main>
