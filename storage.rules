@@ -1,0 +1,46 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isSignedIn() {
+      return request.auth \!= null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    // User avatars
+    match /exoh_avatars/{userId}/{fileName} {
+      allow read: if true;
+      allow write: if isOwner(userId) && 
+        request.resource.size < 5 * 1024 * 1024 && // Max 5MB
+        request.resource.contentType.matches('image/.*');
+    }
+    
+    // User uploaded data files
+    match /exoh_data/{userId}/{fileName} {
+      allow read: if isOwner(userId);
+      allow write: if isOwner(userId) && 
+        request.resource.size < 10 * 1024 * 1024 && // Max 10MB
+        (request.resource.contentType == 'text/csv' || 
+         request.resource.contentType == 'application/fits');
+      allow delete: if isOwner(userId);
+    }
+    
+    // Detection exports
+    match /exoh_exports/{userId}/{fileName} {
+      allow read: if isOwner(userId);
+      allow write: if isOwner(userId) && 
+        request.resource.size < 50 * 1024 * 1024; // Max 50MB
+      allow delete: if isOwner(userId);
+    }
+    
+    // Public resources
+    match /exoh_public/{allPaths=**} {
+      allow read: if true;
+      allow write: if false; // Admin only
+    }
+  }
+}
+ENDRULES < /dev/null

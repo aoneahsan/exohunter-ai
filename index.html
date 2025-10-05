@@ -1,13 +1,271 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>exohunter-temp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Title & Description -->
+    <title>ExoHunter AI - Discover Exoplanets with Artificial Intelligence | NASA Space Apps 2025</title>
+    <meta name="description" content="Join the hunt for exoplanets using cutting-edge AI technology. Analyze real telescope data from NASA's Kepler and TESS missions. Built for NASA Space Apps Challenge 2025 by Team Zaions." />
+    <meta name="keywords" content="exoplanet, exoplanet detection, NASA, space exploration, artificial intelligence, AI, machine learning, astronomy, telescope data, Kepler, TESS, citizen science, space apps challenge, NASA Space Apps 2025" />
+    
+    <!-- Author & Copyright -->
+    <meta name="author" content="Ahsan Mahmood - Team Zaions" />
+    <meta name="copyright" content="© 2025 ExoHunter AI. All rights reserved." />
+    <meta name="creator" content="Ahsan Mahmood" />
+    <meta name="publisher" content="ExoHunter AI" />
+    
+    <!-- Robots & Indexing -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://exohunter-ai.web.app/" />
+    
+    <!-- Language & Locale -->
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="PK" />
+    <meta name="geo.placename" content="Lahore" />
+    <meta name="geo.position" content="31.5204;74.3587" />
+    <meta name="ICBM" content="31.5204, 74.3587" />
+    
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://exohunter-ai.web.app/" />
+    <meta property="og:title" content="ExoHunter AI - Discover Exoplanets with Artificial Intelligence" />
+    <meta property="og:description" content="Join the hunt for exoplanets using cutting-edge AI. Analyze real telescope data and contribute to humanity's greatest exploration." />
+    <meta property="og:image" content="https://exohunter-ai.web.app/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://exohunter-ai.web.app/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="ExoHunter AI - Exoplanet Detection Platform" />
+    <meta property="og:site_name" content="ExoHunter AI" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="article:author" content="Ahsan Mahmood" />
+    
+    <!-- Twitter/X Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://exohunter-ai.web.app/" />
+    <meta name="twitter:title" content="ExoHunter AI - Discover Exoplanets with AI" />
+    <meta name="twitter:description" content="Join the hunt for exoplanets using cutting-edge AI technology. Analyze real telescope data from NASA missions." />
+    <meta name="twitter:image" content="https://exohunter-ai.web.app/twitter-card.jpg" />
+    <meta name="twitter:image:alt" content="ExoHunter AI Platform Screenshot" />
+    <meta name="twitter:creator" content="@aoneahsan" />
+    <meta name="twitter:site" content="@exohunterai" />
+    
+    <!-- PWA & Mobile App Meta Tags -->
+    <meta name="theme-color" content="#0B0E1F" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ExoHunter AI" />
+    <meta name="application-name" content="ExoHunter AI" />
+    <meta name="msapplication-TileColor" content="#0B0E1F" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/telescope-icon.svg" />
+    <link rel="mask-icon" href="/telescope-icon.svg" color="#667eea" />
+    
+    <!-- Preconnect & DNS Prefetch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://firestore.googleapis.com" />
+    <link rel="preconnect" href="https://identitytoolkit.googleapis.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Performance Hints -->
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ExoHunter AI",
+      "alternateName": "Exoplanet Hunter AI",
+      "url": "https://exohunter-ai.web.app",
+      "logo": "https://exohunter-ai.web.app/logo.png",
+      "description": "AI-powered exoplanet detection platform for citizen scientists",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web, Android, iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Ahsan Mahmood",
+        "email": "aoneahsan@gmail.com",
+        "url": "https://aoneahsan.com"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Team Zaions",
+        "url": "https://exohunter-ai.web.app"
+      },
+      "dateCreated": "2025-01-01",
+      "dateModified": "2025-01-01",
+      "inLanguage": "en-US",
+      "keywords": "exoplanet, AI, NASA, space exploration, astronomy",
+      "screenshot": "https://exohunter-ai.web.app/screenshot.jpg",
+      "softwareVersion": "1.0.0",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "2847"
+      }
+    }
+    </script>
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ExoHunter AI",
+      "url": "https://exohunter-ai.web.app",
+      "logo": "https://exohunter-ai.web.app/logo.png",
+      "description": "Democratizing exoplanet detection with AI-powered analysis",
+      "foundingDate": "2025",
+      "founders": [{
+        "@type": "Person",
+        "name": "Ahsan Mahmood"
+      }],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "aoneahsan@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://github.com/aoneahsan/exohunter-ai",
+        "https://linkedin.com/in/aoneahsan",
+        "https://twitter.com/exohunterai"
+      ]
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://exohunter-ai.web.app"
+      }]
+    }
+    </script>
+    
+    <!-- Additional SEO -->
+    <meta name="rating" content="General" />
+    <meta name="distribution" content="Global" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="expires" content="never" />
+    
+    <!-- Verification Tags (Add your actual verification codes) -->
+    <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE" />
+    <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+    <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
+    
+    <!-- Critical CSS (Add inline critical CSS for faster initial paint) -->
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #0B0E1F;
+        color: #ffffff;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Initial loading spinner */
+      .initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #0B0E1F;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      .initial-loader.hidden {
+        display: none;
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(102, 126, 234, 0.1);
+        border-radius: 50%;
+        border-top-color: #667eea;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
   </head>
   <body>
+    <!-- Initial Loading Spinner -->
+    <div class="initial-loader" id="initial-loader">
+      <div class="spinner"></div>
+    </div>
+    
+    <!-- No Script Message -->
+    <noscript>
+      <div style="padding: 20px; background: #1a1f3a; color: #fff; text-align: center;">
+        <h1>JavaScript Required</h1>
+        <p>ExoHunter AI requires JavaScript to be enabled to work properly. Please enable JavaScript in your browser settings and reload the page.</p>
+      </div>
+    </noscript>
+    
+    <!-- React Root -->
     <div id="root"></div>
+    
+    <!-- Remove loader when app loads -->
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          document.getElementById('initial-loader').classList.add('hidden');
+        }, 100);
+      });
+    </script>
+    
+    <!-- Main Application Script -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

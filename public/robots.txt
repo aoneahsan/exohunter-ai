@@ -1,0 +1,47 @@
+# ExoHunter AI Robots.txt
+# https://exohunter-ai.web.app
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: *.json$
+Disallow: *.env$
+
+# Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://exohunter-ai.web.app/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Allow search engines to index images
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot-Image
+Allow: /

@@ -1,0 +1,81 @@
+NOTICE OF PROPRIETARY RIGHTS AND ATTRIBUTION REQUIREMENTS
+
+================================================================================
+ExoHunter AI - Automated Exoplanet Detection System
+Copyright (c) 2025 Ahsan Mahmood / Team Zaions
+All Rights Reserved
+================================================================================
+
+IMPORTANT LEGAL NOTICE:
+
+This software is PROPRIETARY and CONFIDENTIAL property of Ahsan Mahmood.
+Unauthorized use, reproduction, or distribution is STRICTLY PROHIBITED.
+
+ATTRIBUTION REQUIREMENTS:
+-------------------------
+Any authorized use of this software, its concepts, design patterns, or any
+derived work MUST include the following attribution:
+
+1. VISIBLE ATTRIBUTION:
+   "Powered by ExoHunter AI"
+   "Created by Ahsan Mahmood"
+   "© 2025 ExoHunter AI - All Rights Reserved"
+
+2. LINKS REQUIRED:
+   - https://exohunter-ai.web.app
+   - https://aoneahsan.com
+   - https://github.com/aoneahsan
+
+3. NASA SPACE APPS ATTRIBUTION:
+   "Originally developed for NASA Space Apps Challenge 2025"
+   "Team Zaions - Lahore, Pakistan"
+
+THIRD-PARTY COMPONENTS:
+------------------------
+This software incorporates the following third-party libraries and services,
+each subject to their respective licenses:
+
+- React (MIT License)
+- Firebase (Apache 2.0 License)
+- Three.js (MIT License)
+- Tailwind CSS (MIT License)
+- Various npm packages (see package.json for full list)
+
+NASA DATA ATTRIBUTION:
+----------------------
+This application uses data from NASA's Exoplanet Archive and space missions:
+- Kepler Space Telescope Data
+- TESS (Transiting Exoplanet Survey Satellite) Data
+- NASA Exoplanet Archive (https://exoplanetarchive.ipac.caltech.edu)
+
+DEVELOPER CONTACT:
+------------------
+Ahsan Mahmood
+Email: aoneahsan@gmail.com
+Phone: +92 304 661 9706
+LinkedIn: https://linkedin.com/in/aoneahsan
+GitHub: https://github.com/aoneahsan
+Website: https://aoneahsan.com
+
+LEGAL WARNING:
+--------------
+This software is protected by copyright laws and international treaties.
+Unauthorized reproduction or distribution of this software, or any portion
+of it, may result in severe civil and criminal penalties, and will be
+prosecuted to the maximum extent possible under the law.
+
+TRADEMARK NOTICE:
+-----------------
+"ExoHunter AI" is a trademark of Ahsan Mahmood.
+The ExoHunter AI logo and brand identity are proprietary assets.
+
+PROJECT ORIGIN:
+---------------
+Created for: NASA Space Apps Challenge 2025
+Team: Team Zaions
+Location: Lahore, Pakistan
+Challenge: A World Away - Hunting for Exoplanets with AI
+
+================================================================================
+For licensing inquiries or permission requests, contact: aoneahsan@gmail.com
+================================================================================

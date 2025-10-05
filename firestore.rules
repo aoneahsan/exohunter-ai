@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    function isValidUser() {
+      return isSignedIn() && 
+        exists(/databases/$(database)/documents/exoh_users/$(request.auth.uid));
+    }
+    
+    // Users collection
+    match /exoh_users/{userId} {
+      allow read: if true; // Public profiles
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if isOwner(userId);
+    }
+    
+    // Detections collection
+    match /exoh_detections/{detectionId} {
+      allow read: if resource.data.isPublic == true || isOwner(resource.data.userId);
+      allow create: if isValidUser() && 
+        request.resource.data.userId == request.auth.uid;
+      allow update: if isOwner(resource.data.userId) || 
+        (isValidUser() && request.resource.data.keys().hasOnly(['votes']));
+      allow delete: if isOwner(resource.data.userId);
+    }
+    
+    // Tutorials collection (read-only for users)
+    match /exoh_tutorials/{tutorialId} {
+      allow read: if true;
+      allow write: if false; // Admin only through Firebase Console
+    }
+    
+    // Leaderboard collection
+    match /exoh_leaderboard/{entry} {
+      allow read: if true;
+      allow write: if false; // Updated by Cloud Functions only
+    }
+    
+    // Activities collection
+    match /exoh_activities/{activityId} {
+      allow read: if isValidUser();
+      allow create: if isValidUser() && 
+        request.resource.data.userId == request.auth.uid;
+      allow update: if false;
+      allow delete: if isOwner(resource.data.userId);
+    }
+    
+    // Notifications collection
+    match /exoh_notifications/{notificationId} {
+      allow read: if isOwner(resource.data.userId);
+      allow create: if false; // Created by Cloud Functions
+      allow update: if isOwner(resource.data.userId) && 
+        request.resource.data.keys().hasOnly(['read']);
+      allow delete: if isOwner(resource.data.userId);
+    }
+    
+    // User achievements subcollection
+    match /exoh_users/{userId}/achievements/{achievementId} {
+      allow read: if true;
+      allow write: if isOwner(userId);
+    }
+    
+    // User saved detections subcollection
+    match /exoh_users/{userId}/saved_detections/{detectionId} {
+      allow read: if isOwner(userId);
+      allow write: if isOwner(userId);
+    }
+  }
+}

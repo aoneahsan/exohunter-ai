@@ -1,0 +1,108 @@
+LEGAL DISCLAIMER AND LIABILITY WAIVER
+
+================================================================================
+ExoHunter AI - IMPORTANT LEGAL NOTICE
+================================================================================
+
+PLEASE READ THIS DISCLAIMER CAREFULLY BEFORE USING THIS SOFTWARE
+
+1. NO WARRANTY
+--------------
+THIS SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH YOU.
+SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY
+SERVICING, REPAIR, OR CORRECTION.
+
+2. LIMITATION OF LIABILITY
+--------------------------
+IN NO EVENT SHALL AHSAN MAHMOOD, TEAM ZAIONS, OR ANY CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+3. EDUCATIONAL AND DEMONSTRATION PURPOSE
+-----------------------------------------
+This software is developed for EDUCATIONAL and DEMONSTRATION purposes as part
+of the NASA Space Apps Challenge 2025. The exoplanet detection algorithms are
+SIMULATED and should NOT be used for actual scientific research or publication
+without proper validation.
+
+4. NO PROFESSIONAL ADVICE
+-------------------------
+The information provided by ExoHunter AI is for general informational purposes
+only. All information is provided in good faith; however, we make no representation
+or warranty of any kind regarding the accuracy, adequacy, validity, reliability,
+availability, or completeness of any information.
+
+5. EXTERNAL LINKS DISCLAIMER
+-----------------------------
+This software may contain links to external websites that are not provided or
+maintained by us. We have no control over the nature, content, and availability
+of those sites.
+
+6. DATA ACCURACY
+----------------
+While we use data from NASA and other reputable sources, we do not guarantee
+the accuracy, completeness, or timeliness of the data. Users should verify
+important information independently.
+
+7. THIRD-PARTY SERVICES
+-----------------------
+This software uses third-party services including but not limited to:
+- Firebase (Google)
+- NASA APIs
+- Various npm packages
+
+We are not responsible for any issues arising from these third-party services.
+
+8. USER RESPONSIBILITIES
+------------------------
+By using this software, you agree that:
+- You will use it only for lawful purposes
+- You will not attempt to breach security measures
+- You will not use it to harass, harm, or violate others' rights
+- You will comply with all applicable laws and regulations
+
+9. INDEMNIFICATION
+------------------
+You agree to indemnify and hold harmless Ahsan Mahmood, Team Zaions, and all
+contributors from any claims, damages, losses, liabilities, and all costs and
+expenses of defense, including attorneys' fees, resulting directly or indirectly
+from your use or misuse of the software.
+
+10. CHANGES TO THIS DISCLAIMER
+-------------------------------
+We reserve the right to modify this disclaimer at any time without notice.
+Your continued use of the software constitutes acceptance of any changes.
+
+11. SEVERABILITY
+----------------
+If any provision of this disclaimer is found to be unenforceable or invalid,
+that provision shall be limited or eliminated to the minimum extent necessary
+so that this disclaimer shall otherwise remain in full force and effect.
+
+12. GOVERNING LAW
+-----------------
+This disclaimer shall be governed by and construed in accordance with the laws
+of Pakistan, without regard to its conflict of law provisions.
+
+13. CONTACT INFORMATION
+-----------------------
+For questions about this disclaimer, contact:
+Ahsan Mahmood
+Email: aoneahsan@gmail.com
+Website: https://aoneahsan.com
+
+================================================================================
+BY USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THIS DISCLAIMER,
+UNDERSTOOD IT, AND AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS.
+================================================================================
+
+Last Updated: January 2025
+Version: 1.0.0

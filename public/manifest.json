@@ -1,0 +1,88 @@
+{
+  "name": "ExoHunter AI - Exoplanet Detection Platform",
+  "short_name": "ExoHunter AI",
+  "description": "Discover exoplanets using cutting-edge AI technology. Analyze real telescope data from NASA missions.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0B0E1F",
+  "background_color": "#0B0E1F",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["education", "science", "productivity"],
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/telescope-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-1.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "ExoHunter AI Dashboard"
+    },
+    {
+      "src": "/screenshot-2.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "AI Analysis in Progress"
+    },
+    {
+      "src": "/screenshot-3.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "label": "Discoveries Feed"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Analysis",
+      "short_name": "Analyze",
+      "description": "Start analyzing telescope data",
+      "url": "/explorer",
+      "icons": [{ "src": "/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your dashboard",
+      "url": "/dashboard",
+      "icons": [{ "src": "/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Discoveries",
+      "short_name": "Discoveries",
+      "description": "Browse exoplanet discoveries",
+      "url": "/discoveries",
+      "icons": [{ "src": "/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+exohunter",
+      "url": "/?detection=%s"
+    }
+  ]
+}
