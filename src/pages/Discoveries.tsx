@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Star, 
-  ThumbsUp, 
+import {
+  Star,
+  ThumbsUp,
   ThumbsDown,
   Filter,
-  Calendar,
-  TrendingUp,
   User,
   MapPin,
   Clock,
-  Award,
   Search,
-  SortAsc,
   Eye,
   MessageCircle,
   Share2
@@ -39,7 +35,7 @@ const mockDiscoveries: Detection[] = [
     userId: 'user1',
     userName: 'Dr. Sarah Chen',
     userPhoto: '',
-    timestamp: { seconds: Date.now() / 1000 - 3600 } as any,
+    timestamp: { seconds: 0 } as Detection['timestamp'],
     starData: {
       catalogId: 'TOI-715',
       name: 'TOI-715 b',
@@ -67,7 +63,7 @@ const mockDiscoveries: Detection[] = [
     userId: 'user2',
     userName: 'Alex Rodriguez',
     userPhoto: '',
-    timestamp: { seconds: Date.now() / 1000 - 7200 } as any,
+    timestamp: { seconds: 0 } as Detection['timestamp'],
     starData: {
       catalogId: 'EPIC-247267267',
       name: 'K2-315b',
@@ -95,7 +91,7 @@ const mockDiscoveries: Detection[] = [
     userId: 'user3',
     userName: 'Emma Thompson',
     userPhoto: '',
-    timestamp: { seconds: Date.now() / 1000 - 14400 } as any,
+    timestamp: { seconds: 0 } as Detection['timestamp'],
     starData: {
       catalogId: 'TIC-237913194',
       name: 'TOI-849b',
@@ -123,7 +119,7 @@ const mockDiscoveries: Detection[] = [
     userId: 'user4',
     userName: 'Dr. Michael Park',
     userPhoto: '',
-    timestamp: { seconds: Date.now() / 1000 - 21600 } as any,
+    timestamp: { seconds: 0 } as Detection['timestamp'],
     starData: {
       catalogId: 'LP 890-9',
       name: 'LP 890-9c',
@@ -151,7 +147,6 @@ const mockDiscoveries: Detection[] = [
 export default function Discoveries() {
   const { currentUser } = useAuth();
   const [discoveries, setDiscoveries] = useState<Detection[]>(mockDiscoveries);
-  const [filteredDiscoveries, setFilteredDiscoveries] = useState<Detection[]>(mockDiscoveries);
   const [filters, setFilters] = useState<FilterOptions>({
     dateRange: 'all',
     confidence: 'all',
@@ -162,13 +157,14 @@ export default function Discoveries() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showFilters, setShowFilters] = useState(false);
   const [userVotes, setUserVotes] = useState<Record<string, 'up' | 'down' | null>>({});
+  const [currentTime] = useState(() => Date.now() / 1000);
 
-  useEffect(() => {
+  const filteredDiscoveries = useMemo(() => {
     let filtered = [...discoveries];
 
     // Apply search filter
     if (searchTerm) {
-      filtered = filtered.filter(d => 
+      filtered = filtered.filter(d =>
         d.starData.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         d.starData.catalogId.toLowerCase().includes(searchTerm.toLowerCase()) ||
         d.userName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -178,14 +174,13 @@ export default function Discoveries() {
 
     // Apply date filter
     if (filters.dateRange !== 'all') {
-      const now = Date.now() / 1000;
       const ranges = {
         today: 24 * 60 * 60,
         week: 7 * 24 * 60 * 60,
         month: 30 * 24 * 60 * 60
       };
       const range = ranges[filters.dateRange];
-      filtered = filtered.filter(d => now - d.timestamp.seconds < range);
+      filtered = filtered.filter(d => currentTime - d.timestamp.seconds < range);
     }
 
     // Apply confidence filter
@@ -219,8 +214,8 @@ export default function Discoveries() {
       }
     });
 
-    setFilteredDiscoveries(filtered);
-  }, [discoveries, filters, searchTerm]);
+    return filtered;
+  }, [discoveries, filters, searchTerm, currentTime]);
 
   const handleVote = (discoveryId: string, voteType: 'up' | 'down') => {
     if (!currentUser) return;
@@ -250,9 +245,8 @@ export default function Discoveries() {
   };
 
   const getTimeSince = (timestamp: number) => {
-    const now = Date.now() / 1000;
-    const diff = now - timestamp;
-    
+    const diff = currentTime - timestamp;
+
     if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
     if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
     return `${Math.floor(diff / 86400)}d ago`;
@@ -320,7 +314,7 @@ export default function Discoveries() {
                   </Button>
                   <select
                     value={filters.sortBy}
-                    onChange={(e) => setFilters(prev => ({ ...prev, sortBy: e.target.value as any }))}
+                    onChange={(e) => setFilters(prev => ({ ...prev, sortBy: e.target.value as FilterOptions['sortBy'] }))}
                     className="px-3 py-2 bg-slate-700 border border-slate-600 rounded text-white"
                   >
                     <option value="newest">Newest First</option>
@@ -341,7 +335,7 @@ export default function Discoveries() {
                     <Label className="text-gray-300">Date Range</Label>
                     <select
                       value={filters.dateRange}
-                      onChange={(e) => setFilters(prev => ({ ...prev, dateRange: e.target.value as any }))}
+                      onChange={(e) => setFilters(prev => ({ ...prev, dateRange: e.target.value as FilterOptions['dateRange'] }))}
                       className="w-full p-2 bg-slate-700 border border-slate-600 rounded text-white"
                     >
                       <option value="all">All Time</option>
@@ -354,7 +348,7 @@ export default function Discoveries() {
                     <Label className="text-gray-300">Confidence</Label>
                     <select
                       value={filters.confidence}
-                      onChange={(e) => setFilters(prev => ({ ...prev, confidence: e.target.value as any }))}
+                      onChange={(e) => setFilters(prev => ({ ...prev, confidence: e.target.value as FilterOptions['confidence'] }))}
                       className="w-full p-2 bg-slate-700 border border-slate-600 rounded text-white"
                     >
                       <option value="all">All Levels</option>
@@ -367,7 +361,7 @@ export default function Discoveries() {
                     <Label className="text-gray-300">Detection Method</Label>
                     <select
                       value={filters.method}
-                      onChange={(e) => setFilters(prev => ({ ...prev, method: e.target.value as any }))}
+                      onChange={(e) => setFilters(prev => ({ ...prev, method: e.target.value as FilterOptions['method'] }))}
                       className="w-full p-2 bg-slate-700 border border-slate-600 rounded text-white"
                     >
                       <option value="all">All Methods</option>
@@ -380,7 +374,7 @@ export default function Discoveries() {
                     <Label className="text-gray-300">Star Type</Label>
                     <select
                       value={filters.starType}
-                      onChange={(e) => setFilters(prev => ({ ...prev, starType: e.target.value as any }))}
+                      onChange={(e) => setFilters(prev => ({ ...prev, starType: e.target.value as FilterOptions['starType'] }))}
                       className="w-full p-2 bg-slate-700 border border-slate-600 rounded text-white"
                     >
                       <option value="all">All Types</option>

@@ -1,17 +1,16 @@
 import { motion } from 'framer-motion';
-import { 
-  Star, 
-  Telescope, 
-  Brain, 
-  Users, 
-  Award, 
+import {
+  Star,
+  Telescope,
+  Brain,
+  Users,
+  Award,
   Globe,
   Rocket,
   Target,
   Heart,
   Code,
   Database,
-  Cpu,
   ExternalLink,
   Github,
   Mail,

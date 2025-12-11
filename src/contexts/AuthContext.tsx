@@ -66,7 +66,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       displayName: user.displayName || additionalData?.displayName || 'Space Explorer',
       photoURL: user.photoURL || undefined,
       bio: '',
-      joinedAt: serverTimestamp() as any,
+      joinedAt: serverTimestamp() as unknown as User['joinedAt'],
       stats: {
         detectionsCount: 0,
         accuracyScore: 0,
@@ -107,8 +107,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       await createUserProfile(user, { displayName });
       await sendEmailVerification(user);
       toast.success('Account created! Please verify your email.');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(message);
       throw error;
     }
   };
@@ -117,8 +118,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success('Welcome back!');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(message);
       throw error;
     }
   };
@@ -127,16 +129,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const provider = new GoogleAuthProvider();
       const { user } = await signInWithPopup(auth, provider);
-      
+
       // Check if user profile exists
       const userDoc = await getDoc(doc(db, `${PROJECT_PREFIX}users`, user.uid));
       if (!userDoc.exists()) {
         await createUserProfile(user);
       }
-      
+
       toast.success('Welcome to ExoHunter AI!');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(message);
       throw error;
     }
   };
@@ -145,8 +148,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       await signOut(auth);
       toast.success('Logged out successfully');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(message);
       throw error;
     }
   };
@@ -155,8 +159,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       await sendPasswordResetEmail(auth, email);
       toast.success('Password reset email sent!');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(message);
       throw error;
     }
   };
@@ -167,30 +172,32 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const userRef = doc(db, `${PROJECT_PREFIX}users`, currentUser.uid);
       await updateDoc(userRef, updates);
-      
+
       if (updates.displayName || updates.photoURL) {
         await updateProfile(currentUser, {
           displayName: updates.displayName,
           photoURL: updates.photoURL,
         });
       }
-      
+
       setUserProfile(prev => ({ ...prev!, ...updates }));
       toast.success('Profile updated successfully');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(message);
       throw error;
     }
   };
 
   const sendVerificationEmail = async () => {
     if (!currentUser) return;
-    
+
     try {
       await sendEmailVerification(currentUser);
       toast.success('Verification email sent!');
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred';
+      toast.error(message);
       throw error;
     }
   };

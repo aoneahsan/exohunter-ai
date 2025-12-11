@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Bell, BellOff, Check, X } from 'lucide-react';
+import { Bell, BellOff, Check } from 'lucide-react';
 import { 
   isNotificationEnabled, 
   requestNotificationPermission,

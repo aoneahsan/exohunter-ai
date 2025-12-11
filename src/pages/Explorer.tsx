@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Upload, 
@@ -29,7 +29,7 @@ import {
   ReferenceLine
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
-import type { StarData, AnalysisResult } from '@/types';
+import type { AnalysisResult } from '@/types';
 
 interface LightCurveData {
   time: number;

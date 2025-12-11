@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
-import { 
-  User, 
-  Trophy, 
-  Target, 
-  TrendingUp, 
-  Star, 
-  Activity, 
-  Calendar,
+import {
+  User,
+  Trophy,
+  Target,
+  TrendingUp,
+  Star,
+  Activity,
   Play,
   Search,
   BookOpen,
@@ -24,9 +23,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
-  LineChart,
-  Line
+  ResponsiveContainer
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
 import { Link } from 'react-router-dom';

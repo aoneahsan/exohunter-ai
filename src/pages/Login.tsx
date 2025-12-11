@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Mail, 
@@ -60,7 +60,7 @@ export default function Login() {
     try {
       await signIn(formData.email, formData.password);
       navigate('/dashboard');
-    } catch (error) {
+    } catch {
       setErrors({ general: 'Invalid email or password' });
     } finally {
       setIsLoading(false);
@@ -72,7 +72,7 @@ export default function Login() {
     try {
       await signInWithGoogle();
       navigate('/dashboard');
-    } catch (error) {
+    } catch {
       setErrors({ general: 'Failed to sign in with Google' });
     } finally {
       setIsLoading(false);
@@ -81,7 +81,7 @@ export default function Login() {
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!resetEmail) {
       setErrors({ reset: 'Email is required' });
       return;
@@ -91,7 +91,7 @@ export default function Login() {
     try {
       await resetPassword(resetEmail);
       setResetStatus('sent');
-    } catch (error) {
+    } catch {
       setResetStatus('error');
       setErrors({ reset: 'Failed to send reset email' });
     }

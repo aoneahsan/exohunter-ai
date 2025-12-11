@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronRight, 
-  ChevronLeft, 
-  Rocket, 
-  Telescope, 
-  Brain, 
-  Users, 
+import {
+  ChevronRight,
+  ChevronLeft,
+  Rocket,
+  Telescope,
+  Brain,
+  Users,
   Star,
   Target,
   Award,
@@ -17,7 +17,6 @@ import {
   Shield,
   Zap,
   Heart,
-  ArrowRight,
   PlayCircle,
   PauseCircle,
   Maximize2,
@@ -833,6 +832,35 @@ export default function Presentation() {
     }
   ];
 
+  // Touch/swipe support
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  }, [slides.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  }, [slides.length]);
+
+  const toggleFullscreen = useCallback(() => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      setIsFullscreen(true);
+    } else {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  }, []);
+
+  const exitFullscreen = useCallback(() => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+      setIsFullscreen(false);
+    }
+  }, []);
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -853,7 +881,7 @@ export default function Presentation() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentSlide]);
+  }, [nextSlide, prevSlide, exitFullscreen, toggleFullscreen, slides.length]);
 
   // Auto-play functionality
   useEffect(() => {
@@ -864,10 +892,6 @@ export default function Presentation() {
       return () => clearInterval(interval);
     }
   }, [isPlaying, slides.length]);
-
-  // Touch/swipe support
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -882,37 +906,12 @@ export default function Presentation() {
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
-    
+
     if (isLeftSwipe) {
       nextSlide();
     }
     if (isRightSwipe) {
       prevSlide();
-    }
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen();
-      setIsFullscreen(false);
-    }
-  };
-
-  const exitFullscreen = () => {
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-      setIsFullscreen(false);
     }
   };
 

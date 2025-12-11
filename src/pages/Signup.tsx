@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Mail, 
@@ -83,8 +83,9 @@ export default function Signup() {
     try {
       await signUp(formData.email, formData.password, formData.displayName);
       setSignupSuccess(true);
-    } catch (error: any) {
-      if (error.code === 'auth/email-already-in-use') {
+    } catch (error: unknown) {
+      const firebaseError = error as { code?: string };
+      if (firebaseError.code === 'auth/email-already-in-use') {
         setErrors({ email: 'This email is already registered' });
       } else {
         setErrors({ general: 'Failed to create account. Please try again.' });
@@ -99,7 +100,7 @@ export default function Signup() {
     try {
       await signInWithGoogle();
       navigate('/dashboard');
-    } catch (error) {
+    } catch {
       setErrors({ general: 'Failed to sign up with Google' });
     } finally {
       setIsLoading(false);

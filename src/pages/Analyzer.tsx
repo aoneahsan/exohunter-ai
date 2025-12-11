@@ -1,27 +1,23 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Settings, 
-  Upload, 
-  Database, 
-  Play, 
-  Pause,
-  Download, 
+import {
+  Settings,
+  Upload,
+  Database,
+  Download,
   GitCompare,
-  Filter,
   BarChart3,
   FileText,
   Layers,
   Cpu,
   Zap,
   RefreshCcw,
-  CheckCircle2,
-  AlertCircle,
-  Info,
   TrendingUp,
   Save,
   Share2,
-  Eye
+  Eye,
+  Play,
+  Pause
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -34,15 +30,9 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
-  ScatterChart,
-  Scatter,
-  Cell,
-  BarChart,
-  Bar
+  ResponsiveContainer
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
-import type { AnalysisResult } from '@/types';
 
 interface DataSource {
   id: string;
@@ -110,27 +100,30 @@ export default function Analyzer() {
     customFilters: false
   });
 
-  const [batchJobs, setBatchJobs] = useState<BatchJob[]>([
-    {
-      id: '1',
-      name: 'TOI Candidates Analysis',
-      status: 'running',
-      progress: 67,
-      filesProcessed: 134,
-      totalFiles: 200,
-      startTime: new Date(Date.now() - 3600000),
-      estimatedCompletion: new Date(Date.now() + 1800000)
-    },
-    {
-      id: '2',
-      name: 'K2 Campaign 19',
-      status: 'completed',
-      progress: 100,
-      filesProcessed: 500,
-      totalFiles: 500,
-      startTime: new Date(Date.now() - 7200000)
-    }
-  ]);
+  const [batchJobs, setBatchJobs] = useState<BatchJob[]>(() => {
+    const now = Date.now();
+    return [
+      {
+        id: '1',
+        name: 'TOI Candidates Analysis',
+        status: 'running',
+        progress: 67,
+        filesProcessed: 134,
+        totalFiles: 200,
+        startTime: new Date(now - 3600000),
+        estimatedCompletion: new Date(now + 1800000)
+      },
+      {
+        id: '2',
+        name: 'K2 Campaign 19',
+        status: 'completed',
+        progress: 100,
+        filesProcessed: 500,
+        totalFiles: 500,
+        startTime: new Date(now - 7200000)
+      }
+    ];
+  });
 
   const [comparisonResults, setComparisonResults] = useState<ComparisonResult[]>([
     {
@@ -162,36 +155,26 @@ export default function Analyzer() {
     }
   ]);
 
-  const [activeTab, setActiveTab] = useState<'sources' | 'settings' | 'batch' | 'compare' | 'results'>('sources');
+  type TabId = 'sources' | 'settings' | 'batch' | 'compare' | 'results';
+  const [activeTab, setActiveTab] = useState<TabId>('sources');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   // Mock data for visualizations
-  const performanceData = [
+  const performanceData = useMemo(() => [
     { metric: 'Throughput', value: 450, unit: 'files/hour' },
     { metric: 'Accuracy', value: 94.2, unit: '%' },
     { metric: 'GPU Usage', value: 78, unit: '%' },
     { metric: 'Memory', value: 12.4, unit: 'GB' }
-  ];
+  ], []);
 
-  const detectionTrends = [
+  const detectionTrends = useMemo(() => [
     { hour: '00:00', detections: 12, false_positives: 2 },
     { hour: '04:00', detections: 18, false_positives: 1 },
     { hour: '08:00', detections: 24, false_positives: 3 },
     { hour: '12:00', detections: 31, false_positives: 2 },
     { hour: '16:00', detections: 28, false_positives: 1 },
     { hour: '20:00', detections: 22, false_positives: 2 }
-  ];
-
-  if (!currentUser) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
-        <div className="text-white text-center">
-          <Settings size={48} className="mx-auto mb-4 opacity-50" />
-          <p>Please log in to access the Advanced Analyzer</p>
-        </div>
-      </div>
-    );
-  }
+  ], []);
 
   const handleDataSourceUpload = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -280,6 +263,17 @@ export default function Analyzer() {
     URL.revokeObjectURL(url);
   }, [comparisonResults, analysisSettings, performanceData, userProfile]);
 
+  if (!currentUser) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+        <div className="text-white text-center">
+          <Settings size={48} className="mx-auto mb-4 opacity-50" />
+          <p>Please log in to access the Advanced Analyzer</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
       <div className="max-w-7xl mx-auto">
@@ -314,7 +308,7 @@ export default function Analyzer() {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as TabId)}
                 className={`flex-1 flex items-center justify-center px-4 py-3 rounded-md transition-all ${
                   activeTab === tab.id
                     ? 'bg-purple-600 text-white'

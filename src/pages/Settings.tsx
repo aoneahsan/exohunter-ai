@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Settings as SettingsIcon, 
-  User, 
-  Bell, 
-  Shield, 
-  Palette, 
+import {
+  Settings as SettingsIcon,
+  User,
+  Shield,
+  Palette,
   Trash2,
   Save,
   Eye,
   EyeOff,
-  Mail,
   Lock,
-  Globe,
-  Smartphone,
-  Monitor,
   Moon,
   AlertTriangle,
-  CheckCircle2,
-  X
+  CheckCircle2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -96,7 +90,7 @@ export default function Settings() {
       
       // Reset save status after 2 seconds
       setTimeout(() => setSaveStatus('idle'), 2000);
-    } catch (error) {
+    } catch {
       setSaveStatus('error');
       toast.error('Failed to save settings');
       setTimeout(() => setSaveStatus('idle'), 2000);
@@ -109,7 +103,7 @@ export default function Settings() {
       toast.success('Account deletion request submitted');
       setShowDeleteConfirm(false);
       // Redirect to logout or deletion confirmation page
-    } catch (error) {
+    } catch {
       toast.error('Failed to delete account');
     }
   };
@@ -119,7 +113,7 @@ export default function Settings() {
       toast.error('Passwords do not match');
       return;
     }
-    
+
     if (settings.newPassword.length < 6) {
       toast.error('Password must be at least 6 characters');
       return;
@@ -134,7 +128,7 @@ export default function Settings() {
         newPassword: '',
         confirmPassword: ''
       }));
-    } catch (error) {
+    } catch {
       toast.error('Failed to change password');
     }
   };

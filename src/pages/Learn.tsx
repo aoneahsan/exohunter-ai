@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  BookOpen, 
-  Play, 
-  Clock, 
-  Users, 
-  Star,
+import {
+  BookOpen,
+  Play,
+  Clock,
   Activity,
-  Eye,
   CheckCircle2,
   PlayCircle,
   FileText,
   Brain,
   Telescope,
-  Globe,
   Zap,
   Award,
   ChevronRight,
-  Search,
-  Filter
+  Search
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -394,7 +389,7 @@ export default function Learn() {
                 <div className="flex gap-2">
                   <select
                     value={difficultyFilter}
-                    onChange={(e) => setDifficultyFilter(e.target.value as any)}
+                    onChange={(e) => setDifficultyFilter(e.target.value as 'all' | 'beginner' | 'intermediate' | 'advanced')}
                     className="px-3 py-2 bg-slate-700 border border-slate-600 rounded text-white"
                   >
                     <option value="all">All Levels</option>

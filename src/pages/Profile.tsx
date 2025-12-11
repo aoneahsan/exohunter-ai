@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  User, 
-  Edit3, 
-  Star, 
-  Trophy, 
+import {
+  User,
+  Edit3,
+  Star,
   Calendar,
-  MapPin,
-  Globe,
-  Clock,
-  Target,
   Award,
   Activity,
   TrendingUp,
@@ -31,9 +26,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
-  BarChart,
-  Bar
+  ResponsiveContainer
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
 import type { Detection } from '@/types';
@@ -129,7 +122,7 @@ const recentDetections: Detection[] = [
   {
     id: '1',
     userId: 'current-user',
-    timestamp: { seconds: Date.now() / 1000 - 3600 } as any,
+    timestamp: { seconds: 0 } as Detection['timestamp'],
     starData: {
       catalogId: 'TOI-715',
       name: 'TOI-715 b',
@@ -153,7 +146,7 @@ const recentDetections: Detection[] = [
   {
     id: '2',
     userId: 'current-user',
-    timestamp: { seconds: Date.now() / 1000 - 86400 } as any,
+    timestamp: { seconds: 0 } as Detection['timestamp'],
     starData: {
       catalogId: 'K2-315',
       name: 'K2-315b',
@@ -180,22 +173,12 @@ export default function Profile() {
   const { currentUser, userProfile, updateUserProfile } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState({
-    displayName: userProfile?.displayName || '',
-    bio: userProfile?.bio || '',
+    displayName: '',
+    bio: '',
     location: '',
     website: ''
   });
-
-  if (!currentUser || !userProfile) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
-        <div className="text-white text-center">
-          <User size={48} className="mx-auto mb-4 opacity-50" />
-          <p>Please log in to view your profile</p>
-        </div>
-      </div>
-    );
-  }
+  const [currentTime] = useState(() => Date.now() / 1000);
 
   const handleSaveProfile = async () => {
     try {
@@ -221,13 +204,23 @@ export default function Profile() {
   };
 
   const getTimeSince = (timestamp: number) => {
-    const now = Date.now() / 1000;
-    const diff = now - timestamp;
-    
+    const diff = currentTime - timestamp;
+
     if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
     if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
     return `${Math.floor(diff / 86400)}d ago`;
   };
+
+  if (!currentUser || !userProfile) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+        <div className="text-white text-center">
+          <User size={48} className="mx-auto mb-4 opacity-50" />
+          <p>Please log in to view your profile</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
