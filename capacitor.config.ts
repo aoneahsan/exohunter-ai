@@ -24,6 +24,20 @@ const config: CapacitorConfig = {
     PushNotifications: {
       presentationOptions: ['badge', 'sound', 'alert'],
     },
+    App: {
+      deepLinkScheme: 'exohunterai',
+    },
+    Browser: {
+      toolbarColor: '#667eea',
+    },
+    Toast: {
+      duration: 'short',
+      position: 'bottom',
+    },
+    Badge: {
+      persist: true,
+      autoClear: false,
+    },
   },
 };
 

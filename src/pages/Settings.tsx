@@ -4,13 +4,11 @@ import {
   Settings as SettingsIcon,
   User,
   Shield,
-  Palette,
   Trash2,
   Save,
   Eye,
   EyeOff,
   Lock,
-  Moon,
   AlertTriangle,
   CheckCircle2
 } from 'lucide-react';
@@ -20,6 +18,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { NotificationSettings } from '@/components/NotificationSettings';
+import { ThemeSettings } from '@/components/ThemeSettings';
 import toast from 'react-hot-toast';
 
 export default function Settings() {
@@ -326,90 +325,7 @@ export default function Settings() {
           </motion.div>
 
           {/* Theme & Display */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            <Card className="bg-slate-800/50 border-purple-500/20">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center">
-                  <Palette className="mr-2" size={20} />
-                  Theme & Display
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <Label className="text-gray-300">Theme</Label>
-                    <div className="mt-2 p-3 bg-slate-700/50 rounded-lg border border-purple-500/30">
-                      <div className="flex items-center space-x-3">
-                        <Moon className="text-purple-400" size={20} />
-                        <div>
-                          <div className="text-white font-medium">Dark Space Theme</div>
-                          <div className="text-gray-400 text-sm">Perfect for stargazing</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <Label className="text-gray-300">Language</Label>
-                    <select
-                      value={settings.language}
-                      onChange={(e) => setSettings(prev => ({ ...prev, language: e.target.value }))}
-                      className="w-full mt-2 p-2 bg-slate-700 border border-slate-600 rounded text-white"
-                    >
-                      <option value="en">English</option>
-                      <option value="es">Español</option>
-                      <option value="fr">Français</option>
-                      <option value="de">Deutsch</option>
-                      <option value="zh">中文</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <Label className="text-gray-300">Timezone</Label>
-                    <select
-                      value={settings.timezone}
-                      onChange={(e) => setSettings(prev => ({ ...prev, timezone: e.target.value }))}
-                      className="w-full mt-2 p-2 bg-slate-700 border border-slate-600 rounded text-white"
-                    >
-                      <option value="UTC">UTC</option>
-                      <option value="America/New_York">Eastern Time</option>
-                      <option value="America/Chicago">Central Time</option>
-                      <option value="America/Denver">Mountain Time</option>
-                      <option value="America/Los_Angeles">Pacific Time</option>
-                      <option value="Europe/London">London</option>
-                      <option value="Europe/Paris">Paris</option>
-                      <option value="Asia/Tokyo">Tokyo</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-600">
-                  <label className="flex items-center space-x-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={settings.compactMode}
-                      onChange={(e) => setSettings(prev => ({ ...prev, compactMode: e.target.checked }))}
-                      className="w-4 h-4 text-purple-600 bg-slate-700 border-slate-600 rounded focus:ring-purple-500"
-                    />
-                    <span className="text-gray-300">Compact mode</span>
-                  </label>
-                  <label className="flex items-center space-x-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={settings.animationsEnabled}
-                      onChange={(e) => setSettings(prev => ({ ...prev, animationsEnabled: e.target.checked }))}
-                      className="w-4 h-4 text-purple-600 bg-slate-700 border-slate-600 rounded focus:ring-purple-500"
-                    />
-                    <span className="text-gray-300">Enable animations</span>
-                  </label>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
+          <ThemeSettings />
 
           {/* Danger Zone */}
           <motion.div

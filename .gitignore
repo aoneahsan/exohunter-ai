@@ -73,10 +73,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
-.env.development.local
-.env.test.local
-.env.production.local
+# PRIVATE REPO: .env is committed, only .env.local is ignored
 .env.local
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -131,13 +128,28 @@ dist
 # Firebase
 .firebase/
 
-# Capacitor
-android/
-ios/
+# Capacitor - Include source, exclude build artifacts
+android/app/build/
+android/.gradle/
+android/build/
+android/local.properties
+android/*.iml
+android/.cxx/
+ios/App/build/
+ios/Pods/
+ios/DerivedData/
+ios/*.xcworkspace
+ios/.DS_Store
+*.apk
+*.aab
+*.ipa
 .angular/
 
 # Ignore files with .ignore. pattern
 *.ignore.*
+
+# Project-specific ignore folder
+project-record-ignore/
 
 # IDE
 .vscode/
@@ -157,4 +169,3 @@ dist/
 # Lock files (we'll only keep yarn.lock)
 package-lock.json
 pnpm-lock.yaml
-EOF < /dev/null

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Lock, 
-  Eye, 
-  EyeOff, 
+import {
+  Mail,
+  Lock,
+  Eye,
+  EyeOff,
   Star,
   ArrowRight,
   AlertCircle,
@@ -16,11 +16,14 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAnalytics } from '@/hooks/useAnalytics';
+import { AnalyticsEvents } from '@/services/analytics';
 
 export default function Login() {
   const { signIn, signInWithGoogle, resetPassword } = useAuth();
   const navigate = useNavigate();
-  
+  const { track, identify, trackFormSubmit, trackError } = useAnalytics();
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -53,14 +56,29 @@ export default function Login() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!validateForm()) return;
+
+    track(AnalyticsEvents.AUTH_LOGIN_STARTED, { method: 'email' });
+
+    if (!validateForm()) {
+      trackFormSubmit('login-form', { success: false, validation_failed: true });
+      return;
+    }
 
     setIsLoading(true);
     try {
-      await signIn(formData.email, formData.password);
+      const user = await signIn(formData.email, formData.password);
+      track(AnalyticsEvents.AUTH_LOGIN_COMPLETED, { method: 'email' });
+      if (user) {
+        identify(user.uid, {
+          email: user.email || undefined,
+          displayName: user.displayName || undefined,
+        });
+      }
+      trackFormSubmit('login-form', { success: true });
       navigate('/dashboard');
-    } catch {
+    } catch (error) {
+      track(AnalyticsEvents.AUTH_LOGIN_FAILED, { method: 'email', error: 'Invalid credentials' });
+      trackError('Login failed', { method: 'email' });
       setErrors({ general: 'Invalid email or password' });
     } finally {
       setIsLoading(false);
@@ -68,11 +86,21 @@ export default function Login() {
   };
 
   const handleGoogleSignIn = async () => {
+    track(AnalyticsEvents.AUTH_LOGIN_STARTED, { method: 'google' });
     setIsLoading(true);
     try {
-      await signInWithGoogle();
+      const user = await signInWithGoogle();
+      track(AnalyticsEvents.AUTH_LOGIN_COMPLETED, { method: 'google' });
+      if (user) {
+        identify(user.uid, {
+          email: user.email || undefined,
+          displayName: user.displayName || undefined,
+        });
+      }
       navigate('/dashboard');
-    } catch {
+    } catch (error) {
+      track(AnalyticsEvents.AUTH_LOGIN_FAILED, { method: 'google' });
+      trackError('Google login failed', { method: 'google' });
       setErrors({ general: 'Failed to sign in with Google' });
     } finally {
       setIsLoading(false);
@@ -87,11 +115,14 @@ export default function Login() {
       return;
     }
 
+    track(AnalyticsEvents.AUTH_PASSWORD_RESET_REQUESTED);
     setResetStatus('sending');
     try {
       await resetPassword(resetEmail);
+      track(AnalyticsEvents.AUTH_PASSWORD_RESET_COMPLETED);
       setResetStatus('sent');
-    } catch {
+    } catch (error) {
+      trackError('Password reset failed');
       setResetStatus('error');
       setErrors({ reset: 'Failed to send reset email' });
     }

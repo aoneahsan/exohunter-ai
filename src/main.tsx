@@ -1,7 +1,9 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { ThemeProvider } from '@/components/ThemeProvider'
+import { FullPageLoader } from '@/components/FullPageLoader'
 
 // Register service worker for PWA
 if ('serviceWorker' in navigator) {
@@ -12,8 +14,31 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+function Root() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showApp, setShowApp] = useState(false);
+
+  useEffect(() => {
+    // Minimum loading time to show tips
+    const minLoadTime = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(minLoadTime);
+  }, []);
+
+  const handleLoadComplete = () => {
+    setShowApp(true);
+  };
+
+  return (
+    <StrictMode>
+      <ThemeProvider>
+        <FullPageLoader isLoading={isLoading} onComplete={handleLoadComplete} />
+        {showApp && <App />}
+      </ThemeProvider>
+    </StrictMode>
+  );
+}
+
+createRoot(document.getElementById('root')!).render(<Root />)

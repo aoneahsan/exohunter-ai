@@ -17,6 +17,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { useAuth } from '@/contexts/AuthContext';
 import { useUIStore } from '@/store/useUIStore';
 import { cn } from '@/lib/utils';
@@ -102,6 +103,8 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex md:items-center md:gap-4">
+            <ThemeToggle />
+            <div className="h-6 w-px bg-gray-700" />
             <a
               href="https://github.com/aoneahsan/exohunter-ai"
               target="_blank"

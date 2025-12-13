@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, 
-  Lock, 
-  User, 
-  Eye, 
-  EyeOff, 
+import {
+  Mail,
+  Lock,
+  User,
+  Eye,
+  EyeOff,
   Star,
   ArrowRight,
   AlertCircle,
@@ -18,11 +18,14 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAnalytics } from '@/hooks/useAnalytics';
+import { AnalyticsEvents } from '@/services/analytics';
 
 export default function Signup() {
   const { signUp, signInWithGoogle } = useAuth();
   const navigate = useNavigate();
-  
+  const { track, identify, trackFormSubmit, trackError } = useAnalytics();
+
   const [formData, setFormData] = useState({
     displayName: '',
     email: '',
@@ -76,18 +79,44 @@ export default function Signup() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!validateForm()) return;
+
+    track(AnalyticsEvents.AUTH_SIGNUP_STARTED, {
+      method: 'email',
+      newsletter_opt_in: newsletterOptIn,
+    });
+
+    if (!validateForm()) {
+      trackFormSubmit('signup-form', { success: false, validation_failed: true });
+      return;
+    }
 
     setIsLoading(true);
     try {
-      await signUp(formData.email, formData.password, formData.displayName);
+      const user = await signUp(formData.email, formData.password, formData.displayName);
+      track(AnalyticsEvents.AUTH_SIGNUP_COMPLETED, {
+        method: 'email',
+        newsletter_opt_in: newsletterOptIn,
+      });
+      if (user) {
+        identify(user.uid, {
+          email: user.email || undefined,
+          displayName: formData.displayName,
+          joinedAt: new Date().toISOString(),
+        });
+      }
+      trackFormSubmit('signup-form', { success: true });
       setSignupSuccess(true);
     } catch (error: unknown) {
       const firebaseError = error as { code?: string };
+      track(AnalyticsEvents.AUTH_SIGNUP_FAILED, {
+        method: 'email',
+        error: firebaseError.code || 'unknown',
+      });
       if (firebaseError.code === 'auth/email-already-in-use') {
+        trackError('Signup failed', { reason: 'Email already in use' });
         setErrors({ email: 'This email is already registered' });
       } else {
+        trackError('Signup failed', { reason: firebaseError.code || 'unknown' });
         setErrors({ general: 'Failed to create account. Please try again.' });
       }
     } finally {
@@ -96,11 +125,22 @@ export default function Signup() {
   };
 
   const handleGoogleSignUp = async () => {
+    track(AnalyticsEvents.AUTH_SIGNUP_STARTED, { method: 'google' });
     setIsLoading(true);
     try {
-      await signInWithGoogle();
+      const user = await signInWithGoogle();
+      track(AnalyticsEvents.AUTH_SIGNUP_COMPLETED, { method: 'google' });
+      if (user) {
+        identify(user.uid, {
+          email: user.email || undefined,
+          displayName: user.displayName || undefined,
+          joinedAt: new Date().toISOString(),
+        });
+      }
       navigate('/dashboard');
-    } catch {
+    } catch (error) {
+      track(AnalyticsEvents.AUTH_SIGNUP_FAILED, { method: 'google' });
+      trackError('Google signup failed', { method: 'google' });
       setErrors({ general: 'Failed to sign up with Google' });
     } finally {
       setIsLoading(false);

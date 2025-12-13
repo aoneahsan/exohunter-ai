@@ -22,96 +22,71 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const teamMembers = [
   {
-    name: 'Dr. Sarah Chen',
-    role: 'Astrophysicist & Project Lead',
-    bio: 'NASA researcher specializing in exoplanet detection with 10+ years of experience in astronomical data analysis.',
-    avatar: '👩‍🚀',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#'
-    }
-  },
-  {
-    name: 'Alex Rodriguez',
-    role: 'AI/ML Engineer',
-    bio: 'Machine learning expert with expertise in computer vision and signal processing for astronomical applications.',
+    name: 'Ahsan Mahmood',
+    role: 'Lead Developer & Creator',
+    bio: 'Full-stack developer passionate about space exploration and AI. Creator of ExoHunter AI for NASA Space Apps Challenge 2025.',
     avatar: '👨‍💻',
     social: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#'
-    }
-  },
-  {
-    name: 'Dr. Maria Santos',
-    role: 'Data Scientist',
-    bio: 'Computational astrophysicist focused on developing algorithms for automated celestial object classification.',
-    avatar: '👩‍🔬',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#'
-    }
-  },
-  {
-    name: 'Jordan Kim',
-    role: 'Full-Stack Developer',
-    bio: 'Software engineer passionate about creating intuitive interfaces for scientific discovery and citizen science.',
-    avatar: '👨‍🎨',
-    social: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#'
+      twitter: 'https://twitter.com',
+      linkedin: 'https://linkedin.com/in/aoneahsan',
+      github: 'https://github.com/aoneahsan'
     }
   }
 ];
 
 const technologies = [
   {
-    category: 'AI & Machine Learning',
-    icon: Brain,
-    items: ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Computer Vision', 'Neural Networks']
-  },
-  {
-    category: 'Frontend Development',
+    category: 'Frontend',
     icon: Code,
-    items: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Recharts']
+    items: ['React 19', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Radix UI']
   },
   {
-    category: 'Backend & Database',
+    category: 'Backend & Cloud',
     icon: Database,
-    items: ['Firebase', 'Node.js', 'Python', 'PostgreSQL', 'Cloud Functions']
+    items: ['Firebase', 'Firestore', 'Cloud Functions', 'Authentication', 'Storage']
   },
   {
-    category: 'Astronomical Data',
+    category: 'Mobile & PWA',
+    icon: Globe,
+    items: ['Capacitor 8', 'iOS/Android', 'OneSignal', 'PWA Support', 'Offline Mode']
+  },
+  {
+    category: 'Data & Visualization',
     icon: Telescope,
-    items: ['TESS Data', 'Kepler Archive', 'NASA APIs', 'FITS Files', 'Light Curves']
+    items: ['Three.js', 'Recharts', 'NASA APIs', 'TanStack Query', 'Zustand']
   }
 ];
 
 const achievements = [
   {
-    title: 'NASA Space Apps Challenge 2024',
-    description: 'Global winner in the "Exoplanet Exploration" category',
+    title: 'NASA Space Apps Challenge 2025',
+    description: 'Participant in the "A World Away - Hunting for Exoplanets with AI" challenge',
     icon: Award,
-    date: '2024'
+    date: '2025'
   },
   {
-    title: 'Citizen Science Innovation',
-    description: 'Recognized for democratizing exoplanet discovery',
+    title: 'Open Source Platform',
+    description: 'Democratizing exoplanet discovery through citizen science',
     icon: Users,
-    date: '2024'
+    date: '2025'
   },
   {
-    title: 'AI for Good',
-    description: 'Featured in AI applications for space exploration',
+    title: 'AI-Powered Analysis',
+    description: 'Advanced ML algorithms for exoplanet detection',
     icon: Brain,
-    date: '2024'
+    date: '2025'
   }
 ];
 
 export default function About() {
+  React.useEffect(() => {
+    document.title = 'About - ExoHunter AI';
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn about ExoHunter AI - an AI-powered exoplanet discovery platform created for NASA Space Apps Challenge 2025 by Ahsan Mahmood and Team Zaions.');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
       <div className="max-w-7xl mx-auto">
@@ -196,14 +171,15 @@ export default function About() {
                 <div className="lg:w-2/3">
                   <h3 className="text-2xl font-bold text-white mb-4">Born from Innovation</h3>
                   <p className="text-gray-300 mb-4">
-                    ExoHunter AI was created during the 2024 NASA Space Apps Challenge, where our team tackled 
-                    the "Exoplanet Exploration" challenge. Over 48 intense hours, we developed this platform 
-                    to bridge the gap between professional astronomy and citizen science.
+                    ExoHunter AI was created for the 2025 NASA Space Apps Challenge, tackling
+                    the "A World Away - Hunting for Exoplanets with AI" challenge. This platform
+                    bridges the gap between professional astronomy and citizen science by making
+                    exoplanet discovery accessible to everyone.
                   </p>
                   <p className="text-gray-300 mb-4">
-                    Our solution combines NASA's real astronomical data with advanced machine learning 
-                    algorithms, making exoplanet detection accessible to everyone while maintaining 
-                    scientific rigor and accuracy.
+                    Built by Team Zaions, our solution combines NASA's real astronomical data with advanced
+                    machine learning algorithms, enabling citizen scientists to contribute meaningfully to
+                    exoplanet research while maintaining scientific rigor and accuracy.
                   </p>
                   <div className="flex items-center space-x-4">
                     <Button 
@@ -235,13 +211,12 @@ export default function About() {
           className="mb-12"
         >
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Developer</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              A diverse group of scientists, engineers, and dreamers united by our passion 
-              for space exploration and technological innovation.
+              Created with passion for space exploration and technological innovation.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-2xl mx-auto">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -488,7 +463,7 @@ export default function About() {
               </div>
               <div className="mt-8 pt-6 border-t border-slate-600">
                 <p className="text-gray-400 text-sm">
-                  © 2024 ExoHunter AI. Built with ❤️ for the NASA Space Apps Challenge.
+                  © 2025 ExoHunter AI. Built with passion for the NASA Space Apps Challenge by Ahsan Mahmood.
                 </p>
               </div>
             </CardContent>

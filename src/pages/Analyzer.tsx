@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
   Settings,
@@ -33,6 +33,8 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
+import { useAnalytics } from '@/hooks/useAnalytics';
+import { AnalyticsEvents } from '@/services/analytics';
 
 interface DataSource {
   id: string;
@@ -67,6 +69,13 @@ interface ComparisonResult {
 
 export default function Analyzer() {
   const { currentUser, userProfile } = useAuth();
+  const { track, trackButtonClick } = useAnalytics();
+
+  // Track page open
+  useEffect(() => {
+    track(AnalyticsEvents.ANALYZER_OPENED);
+  }, [track]);
+
   const [dataSources, setDataSources] = useState<DataSource[]>([
     {
       id: '1',

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Layout } from '@/components/layout/Layout';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
+import { ScrollToTop } from '@/components/ScrollToTop';
 import { initializeOneSignal } from '@/services/oneSignal';
 
 // Pages
@@ -18,6 +19,19 @@ import Analyzer from '@/pages/Analyzer';
 import Login from '@/pages/Login';
 import Signup from '@/pages/Signup';
 import Presentation from '@/pages/Presentation';
+import Sitemap from '@/pages/Sitemap';
+import Privacy from '@/pages/Privacy';
+import Terms from '@/pages/Terms';
+import Contact from '@/pages/Contact';
+import DataDeletion from '@/pages/DataDeletion';
+import AccountDeletion from '@/pages/AccountDeletion';
+import CookiePolicy from '@/pages/CookiePolicy';
+
+// Error Pages
+import NotFound from '@/pages/NotFound';
+import ServerError from '@/pages/ServerError';
+import Forbidden from '@/pages/Forbidden';
+import Unauthorized from '@/pages/Unauthorized';
 
 function App() {
   useEffect(() => {
@@ -27,6 +41,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -39,7 +54,14 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
             <Route path="presentation" element={<Presentation />} />
-            
+            <Route path="sitemap" element={<Sitemap />} />
+            <Route path="privacy" element={<Privacy />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="data-deletion" element={<DataDeletion />} />
+            <Route path="account-deletion" element={<AccountDeletion />} />
+            <Route path="cookie-policy" element={<CookiePolicy />} />
+
             {/* Protected Routes */}
             <Route
               path="dashboard"
@@ -73,9 +95,15 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            
-            {/* Catch all - redirect to home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+
+            {/* Error Pages */}
+            <Route path="404" element={<NotFound />} />
+            <Route path="500" element={<ServerError />} />
+            <Route path="403" element={<Forbidden />} />
+            <Route path="401" element={<Unauthorized />} />
+
+            {/* Catch all - 404 */}
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </AuthProvider>

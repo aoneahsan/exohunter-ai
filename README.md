@@ -1,283 +1,169 @@
-# 🚀 ExoHunter AI - Automated Exoplanet Detection System
+# ExoHunter AI
 
-[![Proprietary License](https://img.shields.io/badge/License-Proprietary-red.svg)](./LICENSE)
-[![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-blue.svg)](https://www.typescriptlang.org/)
-[![Firebase](https://img.shields.io/badge/Firebase-11.1.0-orange.svg)](https://firebase.google.com/)
-[![Vite](https://img.shields.io/badge/Vite-6.0.5-purple.svg)](https://vitejs.dev/)
+**AI-Powered Exoplanet Discovery Platform**
 
-## 📋 Project Overview
+[![React](https://img.shields.io/badge/React-19.2.1-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-blue.svg)](https://www.typescriptlang.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-12.6.0-orange.svg)](https://firebase.google.com/)
+[![Capacitor](https://img.shields.io/badge/Capacitor-8.0.0-blue.svg)](https://capacitorjs.com/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](./LICENSE)
 
-ExoHunter AI is an advanced web application that uses artificial intelligence to automatically detect exoplanets from telescope data. Built for the NASA Space Apps Challenge 2025, this system democratizes space exploration by making exoplanet detection accessible to citizen scientists worldwide.
+## Overview
 
-**Live Demo:** https://exohunter-ai.web.app/  
-**Challenge:** A World Away: Hunting for Exoplanets with AI  
-**Team:** Zaions Team  
-**Event:** NASA Space Apps Challenge 2025 - Lahore, Pakistan
+ExoHunter AI is an advanced platform that leverages artificial intelligence and machine learning to detect and analyze exoplanets from telescope data. The platform combines cutting-edge AI algorithms with interactive 3D visualizations and educational resources to make exoplanet discovery accessible to researchers, students, and space enthusiasts worldwide. Users can analyze light curve data, explore discovered exoplanets in immersive 3D environments, and contribute to the growing database of planetary discoveries.
 
-## 👨‍💻 Developer Information
+**Live Demo:** [exohunter-ai.web.app](https://exohunter-ai.web.app/)
 
-**Ahsan Mahmood**  
-- 📧 Email: aoneahsan@gmail.com
-- 📱 Phone: +92 304 661 9706
-- 🔗 LinkedIn: https://linkedin.com/in/aoneahsan
-- 💻 GitHub: https://github.com/aoneahsan
-- 📦 NPM: https://npmjs.com/~aoneahsan
-- 🌐 Website: https://aoneahsan.com/
+## Features
 
-## ✨ Key Features
+- **AI-Powered Analysis** - Real-time detection and analysis of exoplanets using machine learning algorithms trained on NASA telescope data
+- **3D Planetary Visualization** - Interactive Three.js-powered 3D models of planetary systems with orbital mechanics and realistic rendering
+- **Discovery Database** - Comprehensive searchable database of exoplanet discoveries with filtering, sorting, and detailed analytics
+- **Learning Center** - Educational resources, tutorials, and interactive guides about exoplanet detection methods and astronomy
+- **Cross-Platform Support** - Progressive Web App with native iOS and Android support via Capacitor for seamless mobile experience
 
-- **AI-Powered Detection Engine** - Real-time analysis of light curve data with pattern recognition
-- **Interactive Data Visualization** - Real-time charts, 3D orbital views, and comparative analysis
-- **User Dashboard** - Personal detection history, achievements, and contribution statistics
-- **Educational Resources** - Interactive tutorials, glossary, and certification system
-- **Community Features** - Public discovery feed, user rankings, and social sharing
-- **Cross-Platform** - Progressive Web App with native mobile support via Capacitor
+## Tech Stack
 
-## 🚀 Getting Started
+- **React 19** + **TypeScript** - Modern UI library with type safety
+- **Vite 7** - Fast build tool and development server
+- **Firebase** (Auth, Firestore, Storage) - Backend services and authentication
+- **Capacitor 8** - Native iOS and Android support
+- **Three.js** + **React Three Fiber** - 3D graphics and visualizations
+- **Radix UI** + **Tailwind CSS** - Component library and styling
+- **Zustand** - Lightweight state management
+- **TanStack Query** - Server state and data fetching
+- **Recharts** - Data visualization and charting
+
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 18.x or higher (we use 24.2.0 - check .nvmrc)
-- Yarn package manager
-- Firebase CLI installed globally
-- Git
+- **Node.js 22+** (check `.nvmrc` for exact version)
+- **Yarn** package manager
+- **Git**
 
 ### Installation
 
 1. **Clone the repository**
-```bash
-git clone https://github.com/aoneahsan/exohunter-ai.git
-cd exohunter-ai
-```
+   ```bash
+   git clone https://github.com/aoneahsan/exohunter-ai.git
+   cd exohunter-ai
+   ```
 
 2. **Install dependencies**
+   ```bash
+   yarn install
+   ```
+
+3. **Configure environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your Firebase credentials
+   ```
+
+4. **Run development server**
+   ```bash
+   yarn dev
+   # App available at http://localhost:5994
+   ```
+
+## Available Scripts
+
 ```bash
-yarn install
+yarn dev              # Start development server (port 5994)
+yarn build            # Build for production
+yarn lint             # Run ESLint
+yarn preview          # Preview production build
+yarn type-check       # Run TypeScript type checking
+yarn format           # Format code with Prettier
 ```
 
-3. **Setup environment variables**
-```bash
-cp .env.example .env.local
-# Edit .env.local with your Firebase configuration
+## Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── pages/          # Route pages
+├── hooks/          # Custom React hooks
+├── services/       # API and Firebase services
+├── store/          # Zustand state stores
+├── utils/          # Utility functions
+├── types/          # TypeScript type definitions
+├── config/         # App configuration
+├── lib/            # Third-party library configs
+└── assets/         # Static assets
 ```
 
-4. **Initialize Firebase**
-```bash
-firebase init
-# Select: Hosting, Firestore, Authentication, Storage
-# Use existing project or create new one
-```
+## Environment Variables
 
-5. **Run development server**
-```bash
-yarn dev
-# App will be available at http://localhost:5173
-```
-
-### Environment Variables
-
-Create a `.env.local` file with the following variables:
+Create a `.env` file in the root directory with the following variables:
 
 ```env
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+# Firebase Configuration
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
 VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
 
+# OneSignal Configuration
 VITE_ONESIGNAL_APP_ID=your_onesignal_app_id
+
+# NASA API Configuration
 VITE_NASA_API_KEY=your_nasa_api_key
+
+# Firebase Emulators (optional - for local development)
+VITE_USE_FIREBASE_EMULATOR=false
+
+# App Configuration
+VITE_APP_NAME=ExoHunter AI
+VITE_APP_VERSION=1.0.0
+VITE_APP_ENV=development
 ```
 
-## 🏗️ Project Structure
+See `.env.example` for a complete list of available configuration options.
 
-```
-exohunter-ai/
-├── src/
-│   ├── components/       # Reusable UI components
-│   │   ├── ui/           # shadcn/ui components
-│   │   ├── layout/       # Layout components
-│   │   ├── features/     # Feature-specific components
-│   │   └── form-fields/  # Custom form components
-│   ├── pages/            # Page components
-│   ├── hooks/            # Custom React hooks
-│   ├── services/         # API and external services
-│   ├── store/            # Zustand state management
-│   ├── utils/            # Utility functions
-│   ├── types/            # TypeScript type definitions
-│   ├── config/           # Configuration files
-│   ├── lib/              # Library integrations
-│   ├── styles/           # Global styles
-│   └── assets/           # Static assets
-├── public/               # Public assets
-├── .env.example          # Environment variables template
-├── .nvmrc                # Node version specification
-├── capacitor.config.ts   # Capacitor configuration
-├── components.json       # shadcn/ui configuration
-├── tailwind.config.js    # Tailwind CSS configuration
-├── vite.config.ts        # Vite configuration
-└── package.json          # Project dependencies
-```
-
-## 📱 Mobile Development
-
-### Building Mobile Apps
-
-1. **Add Capacitor platforms**
-```bash
-npx cap add android
-npx cap add ios
-```
-
-2. **Sync web assets**
-```bash
-yarn build
-npx cap sync
-```
-
-3. **Open in native IDEs**
-```bash
-npx cap open android  # Opens Android Studio
-npx cap open ios      # Opens Xcode
-```
-
-### Capacitor Configuration
-
-The app is configured with:
-- App ID: `com.aoneahsan.exohunterai`
-- App Name: `ExoHunter AI`
-- Splash screen with space theme
-- Push notifications support
-- Offline storage with Preferences API
-
-## 🔧 Available Scripts
-
-```bash
-# Development
-yarn dev              # Start development server
-yarn build            # Build for production
-yarn preview          # Preview production build
-yarn type-check       # Run TypeScript type checking
-yarn lint             # Run ESLint
-yarn format           # Format code with Prettier
-
-# Firebase
-firebase deploy       # Deploy to Firebase Hosting
-firebase emulators:start # Start local Firebase emulators
-
-# Capacitor
-npx cap sync          # Sync web assets to native projects
-npx cap open android  # Open Android project
-npx cap open ios      # Open iOS project
-```
-
-## 🎨 Tech Stack
-
-### Frontend
-- **React 18.3.1** - UI library
-- **TypeScript 5.7.2** - Type safety
-- **Vite 6.0.5** - Build tool
-- **Tailwind CSS 3.4.17** - Utility-first CSS
-- **shadcn/ui** - Component library
-- **Zustand 5.0.2** - State management
-- **React Router 7.1.0** - Routing
-- **React Hook Form 7.54.2** - Form management
-- **Framer Motion 11.15.0** - Animations
-- **Three.js 0.172.0** - 3D graphics
-- **Recharts 2.15.0** - Charts
-
-### Backend
-- **Firebase 11.1.0** - Backend services
-- **Firestore** - NoSQL database
-- **Firebase Auth** - Authentication
-- **Firebase Storage** - File storage
-- **Cloud Functions** - Serverless functions
-
-### Mobile
-- **Capacitor 6.2.0** - Native bridge
-- **OneSignal** - Push notifications
-
-## 🔒 Security
-
-- Environment variables for sensitive data
-- Firebase Security Rules for data access
-- Input validation with Zod
-- HTTPS enforced
-- Content Security Policy headers
-- Rate limiting on API calls
-
-## 🧪 Testing
-
-```bash
-# Run unit tests
-yarn test
-
-# Run e2e tests
-yarn test:e2e
-
-# Run with coverage
-yarn test:coverage
-```
-
-## 📈 Performance
-
-- Lazy loading for routes and images
-- Code splitting with dynamic imports
-- Service Worker for offline support
-- CDN for static assets
-- Optimized bundle size < 200KB
-- Lighthouse score > 90
-
-## 🚀 Deployment
+## Deployment
 
 ### Firebase Hosting
 
-1. **Build the project**
-```bash
-yarn build
-```
+1. Build the project:
+   ```bash
+   yarn build
+   ```
 
-2. **Deploy to Firebase**
-```bash
-firebase deploy
-```
+2. Deploy to Firebase:
+   ```bash
+   firebase deploy
+   ```
 
-### GitHub Actions (CI/CD)
+The app will be deployed to your Firebase Hosting URL.
 
-The project includes GitHub Actions workflows for:
-- Automated testing on PR
-- Build verification
-- Deployment to staging/production
-
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+Please ensure your code follows the project's coding standards and includes appropriate tests.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## License
 
-## 🙏 Acknowledgments
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-- NASA for providing open data and APIs
-- NASA Space Apps Challenge organizers
-- Lahore event organizers
-- Firebase for backend infrastructure
-- Open source community
+## Developer Contact
 
-## 📞 Support
+**Ahsan Mahmood**
 
-- **Issues:** [GitHub Issues](https://github.com/aoneahsan/exohunter-ai/issues)
-- **Email:** aoneahsan@gmail.com
-- **Documentation:** [Project Wiki](https://github.com/aoneahsan/exohunter-ai/wiki)
+- Email: aoneahsan@gmail.com
+- GitHub: [@aoneahsan](https://github.com/aoneahsan)
+- LinkedIn: [linkedin.com/in/aoneahsan](https://linkedin.com/in/aoneahsan)
+- Portfolio: [aoneahsan.com](https://aoneahsan.com)
 
 ---
 
-**Built with ❤️ for NASA Space Apps Challenge 2025 by Team Zaions**
+Built for NASA Space Apps Challenge 2025
