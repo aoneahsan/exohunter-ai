@@ -2,6 +2,7 @@ import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { AuthProvider } from '@/contexts/AuthContext'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { FullPageLoader } from '@/components/FullPageLoader'
 
@@ -33,10 +34,12 @@ function Root() {
 
   return (
     <StrictMode>
-      <ThemeProvider>
-        <FullPageLoader isLoading={isLoading} onComplete={handleLoadComplete} />
-        {showApp && <App />}
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider>
+          <FullPageLoader isLoading={isLoading} onComplete={handleLoadComplete} />
+          {showApp && <App />}
+        </ThemeProvider>
+      </AuthProvider>
     </StrictMode>
   );
 }

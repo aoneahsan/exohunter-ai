@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { AuthProvider } from '@/contexts/AuthContext';
 import { Layout } from '@/components/layout/Layout';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ScrollToTop } from '@/components/ScrollToTop';
@@ -42,9 +41,8 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Layout />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
             {/* Public Routes */}
             <Route index element={<Landing />} />
             <Route path="explorer" element={<Explorer />} />
@@ -106,7 +104,6 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-      </AuthProvider>
     </Router>
   );
 }
