@@ -52,13 +52,14 @@ export function FullPageLoader({ isLoading, onComplete }: FullPageLoaderProps) {
   }, [isLoading]);
 
   useEffect(() => {
-    if (progress >= 100 && onComplete) {
+    if (!isLoading && onComplete) {
+      // When loading completes, call onComplete after exit animation
       const timeout = setTimeout(() => {
         onComplete();
       }, 500);
       return () => clearTimeout(timeout);
     }
-  }, [progress, onComplete]);
+  }, [isLoading, onComplete]);
 
   return (
     <AnimatePresence>
