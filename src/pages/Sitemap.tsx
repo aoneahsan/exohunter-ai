@@ -184,7 +184,7 @@ const Sitemap: React.FC = () => {
                                 </div>
                               </div>
                               {page.isProtected && (
-                                <Lock className="h-4 w-4 text-gray-500" title="Requires login" />
+                                <Lock className="h-4 w-4 text-gray-500" aria-label="Requires login" />
                               )}
                             </div>
                             <CardDescription className="text-gray-400">

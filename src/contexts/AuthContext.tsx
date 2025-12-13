@@ -10,8 +10,9 @@ import {
   sendPasswordResetEmail,
   updateProfile,
   sendEmailVerification,
+  deleteUser,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, deleteDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db, PROJECT_PREFIX } from '@/config/firebase';
 import type { User } from '@/types';
 import toast from 'react-hot-toast';
@@ -27,6 +28,7 @@ interface AuthContextType {
   resetPassword: (email: string) => Promise<void>;
   updateUserProfile: (updates: Partial<User>) => Promise<void>;
   sendVerificationEmail: () => Promise<void>;
+  deleteAccount: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -205,6 +207,31 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const deleteAccount = async () => {
+    if (!currentUser) {
+      throw new Error('No user logged in');
+    }
+
+    try {
+      // Delete user profile from Firestore first
+      const userRef = doc(db, `${PROJECT_PREFIX}users`, currentUser.uid);
+      await deleteDoc(userRef);
+
+      // Delete the Firebase Auth user
+      await deleteUser(currentUser);
+
+      // Clear local state
+      setCurrentUser(null);
+      setUserProfile(null);
+
+      toast.success('Account deleted successfully');
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Failed to delete account';
+      toast.error(message);
+      throw error;
+    }
+  };
+
   const value = {
     currentUser,
     userProfile,
@@ -216,6 +243,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     resetPassword,
     updateUserProfile,
     sendVerificationEmail,
+    deleteAccount,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

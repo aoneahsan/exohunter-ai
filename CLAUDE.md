@@ -29,21 +29,19 @@
 ExoHunter AI - Exoplanet discovery and analysis platform using AI/ML
 
 ## Tech Stack
-- React 19 + TypeScript
-- Vite 7
-- Capacitor 8 (iOS/Android)
-- Firebase (Auth, Firestore, Storage)
-- TanStack React Query
-- Zustand (State Management)
+- React 19 + TypeScript + Vite 7
+- Capacitor 8 (iOS/Android/PWA)
+- Firebase (Auth, Firestore, Storage, Analytics)
+- TanStack React Query + Zustand
 - Radix UI + Tailwind CSS
-- Three.js + React Three Fiber (3D visualizations)
-- Recharts (Data visualization)
+- Three.js + React Three Fiber
+- Recharts + Framer Motion
 
 ## Project Structure
 ```
 src/
 ├── components/     # Reusable UI components
-├── pages/          # Route pages
+├── pages/          # Route pages (23 pages)
 ├── hooks/          # Custom React hooks
 ├── services/       # API and Firebase services
 ├── store/          # Zustand state stores
@@ -52,20 +50,12 @@ src/
 ├── config/         # App configuration
 ├── lib/            # Third-party library configs
 └── assets/         # Static assets
+docs/               # All documentation (organized by topic)
+app-publish-assets/ # Store publishing assets
 ```
 
 ## Path Aliases
-- `@/` → src/
-- `@components/` → src/components/
-- `@pages/` → src/pages/
-- `@hooks/` → src/hooks/
-- `@services/` → src/services/
-- `@store/` → src/store/
-- `@utils/` → src/utils/
-- `@types/` → src/types/
-- `@config/` → src/config/
-- `@lib/` → src/lib/
-- `@assets/` → src/assets/
+`@/` → src/, `@components/` → src/components/, `@pages/` → src/pages/, etc.
 
 ## Available Scripts
 - `yarn dev` - Start dev server (port 5994)
@@ -82,20 +72,23 @@ src/
 ### 🎨 UI/UX Requirements
 - **Card-Based UI**: Use Radix UI card components with icon + title + description for checkboxes/radios/selects (<8 options). For 8+ options, use text with icon on left.
 - **NO Native HTML**: Only use Radix UI components. Never use native `<div>`, `<button>`, `<input>` with custom CSS.
-- **Radix UI Theme**: Provide theme/color/font settings to users. Store in localStorage (guests) and sync to account (logged-in).
-  - Status: Pending implementation
-- **Scroll-to-Top**: Auto-scroll to top on route change (except hash fragments #section).
-- **Error Pages**: Beautiful 404, 500, 403, 401 pages matching app UI.
-- **Sitemap Page**: Create `/sitemap` with card-based UI (icon, title, description, tags), fuzzy search, categorized.
+- **Radix UI Theme**: ✅ Implemented - Theme settings in Settings page with dark/light/system modes, 8 accent colors, 3 font sizes. Cloud sync for authenticated users, localStorage for guests.
+- **Scroll-to-Top**: ✅ Implemented - Auto-scroll to top on route change (except hash fragments).
+- **Error Pages**: ✅ Implemented - Beautiful 404, 500, 403, 401 pages with space theme.
+- **Sitemap Page**: ✅ Implemented - Card-based UI with fuzzy search, categories, keywords/tags at `/sitemap`.
+- **Full Page Loader**: ✅ Implemented - Animated loader with tips, quotes, and progress bar.
 
 ### 📊 Analytics & Tracking
-- **Triple Analytics**: Track EVERY user action in Firebase Analytics, Microsoft Clarity, and Amplitude using centralized service.
+- **Triple Analytics**: ✅ Implemented - Track EVERY user action in Firebase Analytics, Microsoft Clarity, and Amplitude.
+- **Analytics Service**: `src/services/analytics.ts` with 406 lines of production-ready code.
+- **useAnalytics Hook**: `src/hooks/useAnalytics.ts` with 358 lines including specialized hooks.
+- **50+ Predefined Events**: `src/types/analytics.ts` with comprehensive event taxonomy.
 
 ### 📁 Documentation & Maintenance
 - **Documentation**: ALL docs in `/docs` folder with nested subfolders. Only README.md, LICENSE, CONTRIBUTING.md at root.
 - **Project Knowledge**: Maintain detailed docs in `/docs/project-knowledge/`, update every 2 weeks.
 - **NO Useless Docs**: Never create summary/status/record/completion files unless explicitly requested.
-- **Info Pages**: Keep privacy, terms, contact, about, data-deletion, account-deletion pages updated with current features.
+- **Info Pages**: ✅ Complete - Privacy, Terms, Contact, About, Data-Deletion, Account-Deletion, Cookie-Policy.
 - **README Updates**: Refresh every 2 weeks.
   - Last Updated: 2025-12-13
 - **Docs Updates**: Comprehensive feature documentation.
@@ -103,7 +96,7 @@ src/
 
 ### 🔒 Repository Configuration
 - **Git Type**: PRIVATE repository
-- **.gitignore**: Include `android/`, `ios/` source but exclude `android/build/`, `ios/build/`, `*.apk`, `*.ipa`. Always use `*.ignore.*` pattern.
+- **.gitignore**: ✅ Configured - Include `android/`, `ios/` source but exclude build artifacts. Uses `*.ignore.*` pattern.
 - **NO Scripts**: Never create `.sh` files or scripts folder unless explicitly requested.
 
 ### 🔥 Firebase Management
@@ -111,21 +104,40 @@ src/
 - **Collection Prefix**: Use `exohunter_` prefix for all collections.
 
 ### ⚙️ Configuration & Environment
-- **ENV Variables**: Update `.env.example` when adding new vars. Show error on app load if required env is missing.
-- **App Version**: Display version text and code in footer using `@capacitor/app`.
+- **ENV Variables**: ✅ Configured - Update `.env.example` when adding new vars. Show error on app load if required env is missing.
+- **App Version**: ✅ Implemented - Display version text and code in footer using `@capacitor/app` (native platforms).
 
 ### 📱 Capacitor & Mobile
-- **Capacitor Plugins**: When adding android/ios folders, confirm all official and Capawesome plugins are properly implemented. Configure for both platforms in src, document iOS work for later.
+- **Capacitor Plugins**: 19 plugins installed with comprehensive service layer in `src/services/capacitor.ts` (876 lines) and hooks in `src/hooks/useCapacitor.ts` (554 lines).
 - **Platform Support**: iOS, Android, Web (PWA)
+- **Storage**: Use `@capacitor/preferences` (NEVER localStorage/sessionStorage) for native platforms.
 
 ---
 
-## 📋 Development Tracking
-| Task | Status | Notes |
-|------|--------|-------|
-| Radix UI Theme Settings | Pending | To be implemented |
-| Sitemap Page | Pending | To be implemented |
-| Error Pages (404/500/403/401) | Pending | To be verified |
-| Analytics Integration | Pending | Firebase/Clarity/Amplitude |
-| Info Pages Update | Pending | Privacy/Terms/About/Contact |
-| App Version in Footer | Pending | Using @capacitor/app |
+## ✅ Implementation Status
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Radix UI Theme Settings | ✅ Complete | Dark/light/system, 8 colors, 3 font sizes |
+| Sitemap Page | ✅ Complete | Fuzzy search, categories, keywords |
+| Error Pages (404/500/403/401) | ✅ Complete | Beautiful space-themed design |
+| Analytics Integration | ✅ Complete | Firebase/Clarity/Amplitude |
+| Info Pages | ✅ Complete | Privacy/Terms/Contact/About/Deletion |
+| App Version in Footer | ✅ Complete | Native platforms via Capacitor |
+| Scroll-to-Top | ✅ Complete | Instant scroll, skip hash fragments |
+| Full Page Loader | ✅ Complete | Tips, quotes, progress bar |
+| .gitignore | ✅ Complete | Private repo configuration |
+| .env.example | ✅ Complete | Documented with descriptions |
+| Capacitor Service Layer | ✅ Complete | 19 plugins with hooks |
+| App-Publish-Assets | ✅ Complete | Metadata, icons, screenshots |
+
+---
+
+## 📝 Maintenance Schedule
+
+| Task | Frequency | Last Done | Next Due |
+|------|-----------|-----------|----------|
+| README.md Update | Every 2 weeks | 2025-12-13 | 2025-12-27 |
+| Project Knowledge Docs | Every 2 weeks | 2025-12-13 | 2025-12-27 |
+| Global CLAUDE.md Sync | Weekly | 2025-12-13 | 2025-12-20 |
+| Analytics Tracking Verify | Monthly | 2025-12-13 | 2026-01-13 |

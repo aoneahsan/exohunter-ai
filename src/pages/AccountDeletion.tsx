@@ -7,7 +7,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 export default function AccountDeletion() {
-  const { user, deleteAccount } = useAuth();
+  const { currentUser, deleteAccount } = useAuth();
   const navigate = useNavigate();
   const [confirmText, setConfirmText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -221,7 +221,7 @@ export default function AccountDeletion() {
         </motion.div>
 
         {/* Deletion Form */}
-        {user ? (
+        {currentUser ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -238,7 +238,7 @@ export default function AccountDeletion() {
               <CardContent className="space-y-6">
                 <div className="bg-yellow-900/20 border border-yellow-500/30 rounded-md p-4">
                   <p className="text-yellow-200 text-sm font-semibold mb-2">
-                    You are about to delete: {user.email}
+                    You are about to delete: {currentUser.email}
                   </p>
                   <p className="text-gray-300 text-sm">
                     To confirm deletion, type <strong className="text-white">"DELETE MY ACCOUNT"</strong> below (without quotes):
