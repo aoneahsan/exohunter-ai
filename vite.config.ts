@@ -26,6 +26,7 @@ export default defineConfig({
   },
   build: {
     sourcemap: true,
+    chunkSizeWarningLimit: 2000, // Suppress chunk size warnings
     rollupOptions: {
       output: {
         manualChunks: {
@@ -35,6 +36,16 @@ export default defineConfig({
           'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
         },
       },
+      onwarn(warning, warn) {
+        // Suppress dynamic/static import mixing warnings
+        if (warning.message?.includes('dynamically imported') && warning.message?.includes('statically imported')) return;
+        // Suppress Node.js module externalization warnings
+        if (warning.message?.includes('externalized for browser compatibility')) return;
+        // Suppress circular dependency in node_modules
+        if (warning.code === 'CIRCULAR_DEPENDENCY' && warning.message?.includes('node_modules')) return;
+        warn(warning);
+      },
     },
   },
+  logLevel: 'error', // Only show errors, not warnings/info
 })

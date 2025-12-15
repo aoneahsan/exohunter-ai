@@ -12,11 +12,10 @@ import { analytics } from '@/services/analytics';
 import type {
   ErrorMetadata,
   ErrorSeverity,
-  ErrorCategory,
   IErrorHandlerService,
   ErrorTrackingPlatform,
 } from '@/types/error-handler';
-import { getDeviceInfo, getAppInfo, isNativePlatform, getPlatform } from '@/services/capacitor';
+import { getDeviceInfo, getAppInfo, isNativePlatform } from '@/services/capacitor';
 
 // Declare Clarity global
 declare global {
@@ -57,10 +56,8 @@ const platformsInitialized: Record<ErrorTrackingPlatform, boolean> = {
   amplitude: false,
 };
 
-/**
- * Firebase Crashlytics interface (lazy loaded on native platforms)
- */
-let crashlytics: any = null;
+// Note: Firebase Crashlytics is only available on native platforms
+// For web, we rely on Sentry, Clarity, and Amplitude
 
 /**
  * Initialize error tracking platforms
@@ -249,7 +246,8 @@ function reportToSentry(error: Error | string, metadata?: ErrorMetadata): void {
  * Report error to Firebase Crashlytics
  * Note: Currently disabled for web - use Sentry, Clarity, Amplitude instead
  */
-function reportToCrashlytics(error: Error | string, metadata?: ErrorMetadata): void {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function reportToCrashlytics(_error: Error | string, _metadata?: ErrorMetadata): void {
   // Firebase Crashlytics is not supported on web
   // For native platforms, this would be implemented using the native Firebase SDK
   return;
