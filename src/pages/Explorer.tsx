@@ -32,6 +32,7 @@ import {
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
 import type { AnalysisResult } from '@/types';
+import { PageAdSlider } from '@/components/advertising';
 
 interface LightCurveData {
   time: number;
@@ -252,6 +253,9 @@ export default function Explorer() {
             Upload light curve data or select a sample to detect exoplanets using AI
           </p>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-6" />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Data Input Panel */}

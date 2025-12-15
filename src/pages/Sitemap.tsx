@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { sitemapData, iconMap, type SitemapPage } from '@/config/sitemap';
+import { PageAdSlider } from '@/components/advertising';
 
 /**
  * Simple fuzzy search scoring algorithm
@@ -148,6 +149,11 @@ const Sitemap: React.FC = () => {
           <p className="text-lg text-gray-300">
             Navigate all pages and features of ExoHunter AI
           </p>
+        </div>
+
+        {/* Ad Slider */}
+        <div className="mb-8">
+          <PageAdSlider />
         </div>
 
         {/* Search */}

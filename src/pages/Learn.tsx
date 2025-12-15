@@ -19,6 +19,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import type { Tutorial } from '@/types';
+import { PageAdSlider } from '@/components/advertising';
 
 const tutorials: Tutorial[] = [
   {
@@ -337,6 +338,9 @@ export default function Learn() {
             Master the art of exoplanet detection with our comprehensive tutorials and interactive content
           </p>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-6" />
 
         {/* Progress Overview */}
         <motion.div

@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { NotificationBanner } from '@/components/NotificationBanner';
+import { UpdatePromoModal, OneTimePromoModal } from '@/components/advertising';
 
 export const Layout: React.FC = () => {
   return (
@@ -37,6 +38,10 @@ export const Layout: React.FC = () => {
           },
         }}
       />
+
+      {/* Advertising Modals */}
+      <UpdatePromoModal />
+      <OneTimePromoModal />
     </div>
   );
 };

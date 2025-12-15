@@ -28,6 +28,7 @@ import {
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
 import { Link } from 'react-router-dom';
+import { PageAdSlider } from '@/components/advertising';
 
 const weeklyData = [
   { day: 'Mon', detections: 3, accuracy: 92 },
@@ -173,6 +174,9 @@ export default function Dashboard() {
             </div>
           </div>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-6" />
 
         {/* Stats Cards */}
         <motion.div

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Link } from 'react-router-dom';
+import { PageAdSlider } from '@/components/advertising';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -84,6 +85,9 @@ export default function Contact() {
             Have questions, feedback, or want to collaborate? We'd love to hear from you!
           </p>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-8" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Form */}

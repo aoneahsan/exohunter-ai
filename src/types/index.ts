@@ -10,6 +10,7 @@ export interface User {
   stats: UserStats;
   preferences: UserPreferences;
   achievements: Achievement[];
+  isAdmin?: boolean; // Admin flag for administrative access
 }
 
 export interface UserStats {

@@ -21,6 +21,7 @@ import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import type { Detection } from '@/types';
+import { PageAdSlider } from '@/components/advertising';
 
 interface FilterOptions {
   dateRange: 'all' | 'today' | 'week' | 'month';
@@ -304,6 +305,9 @@ export default function Discoveries() {
             Explore exoplanets discovered by our amazing community of citizen scientists
           </p>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-6" />
 
         {/* Search and Filters */}
         <motion.div

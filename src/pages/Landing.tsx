@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { PageAdSlider } from '@/components/advertising';
 
 const Landing: React.FC = () => {
   const [detectionCount, setDetectionCount] = useState(0);
@@ -146,6 +147,13 @@ const Landing: React.FC = () => {
               </div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* Ad Slider */}
+      <section className="relative z-10 px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <PageAdSlider />
         </div>
       </section>
 

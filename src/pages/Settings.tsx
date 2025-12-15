@@ -22,6 +22,7 @@ import { Link } from 'react-router-dom';
 import { NotificationSettings } from '@/components/NotificationSettings';
 import { ThemeSettings } from '@/components/ThemeSettings';
 import toast from 'react-hot-toast';
+import { PageAdSlider } from '@/components/advertising';
 
 export default function Settings() {
   const { currentUser, userProfile, updateUserProfile } = useAuth();
@@ -169,6 +170,9 @@ export default function Settings() {
             Customize your ExoHunter AI experience
           </p>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-6" />
 
         <div className="space-y-6">
           {/* Account Settings */}

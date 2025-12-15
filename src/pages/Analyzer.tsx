@@ -37,6 +37,7 @@ import {
 import { useAuth } from '@/contexts/AuthContext';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import { AnalyticsEvents } from '@/services/analytics';
+import { PageAdSlider } from '@/components/advertising';
 
 interface DataSource {
   id: string;
@@ -320,6 +321,9 @@ export default function Analyzer() {
             Professional-grade exoplanet detection with advanced settings and batch processing
           </p>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-6" />
 
         {/* Tab Navigation */}
         <motion.div

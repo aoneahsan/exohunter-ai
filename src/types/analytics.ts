@@ -113,6 +113,23 @@ export const AnalyticsEvents = {
   APP_SHARE_CLICKED: 'app_share_clicked',
   FEEDBACK_SUBMITTED: 'feedback_submitted',
   HELP_VIEWED: 'help_viewed',
+
+  // Advertising Events
+  AD_IMPRESSION: 'ad_impression',
+  AD_CLICK: 'ad_click',
+  AD_DISMISS: 'ad_dismiss',
+  AD_SLIDER_SCROLL: 'ad_slider_scroll',
+  AD_MODAL_OPENED: 'ad_modal_opened',
+  AD_MODAL_CLOSED: 'ad_modal_closed',
+  AD_CTA_CLICKED: 'ad_cta_clicked',
+  AD_PROMO_NOTIFICATION_SENT: 'ad_promo_notification_sent',
+  AD_PROMO_NOTIFICATION_CLICKED: 'ad_promo_notification_clicked',
+
+  // Admin Events
+  ADMIN_AD_CREATED: 'admin_ad_created',
+  ADMIN_AD_UPDATED: 'admin_ad_updated',
+  ADMIN_AD_DELETED: 'admin_ad_deleted',
+  ADMIN_AD_TOGGLED: 'admin_ad_toggled',
 } as const;
 
 export type AnalyticsEventName = typeof AnalyticsEvents[keyof typeof AnalyticsEvents];

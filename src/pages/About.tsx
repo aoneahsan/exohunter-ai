@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { PageAdSlider } from '@/components/advertising';
 
 const teamMembers = [
   {
@@ -106,6 +107,9 @@ export default function About() {
             Join thousands of space enthusiasts in the search for new worlds beyond our solar system.
           </p>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-8" />
 
         {/* Mission Statement */}
         <motion.div

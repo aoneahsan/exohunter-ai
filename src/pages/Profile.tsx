@@ -32,6 +32,7 @@ import {
 } from 'recharts';
 import { useAuth } from '@/contexts/AuthContext';
 import type { Detection } from '@/types';
+import { PageAdSlider } from '@/components/advertising';
 
 const progressData = [
   { month: 'Jan', detections: 5, accuracy: 85 },
@@ -356,6 +357,9 @@ export default function Profile() {
             </CardContent>
           </Card>
         </motion.div>
+
+        {/* Ad Slider */}
+        <PageAdSlider className="mb-6" />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Stats Overview */}

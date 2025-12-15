@@ -27,6 +27,7 @@ import Contact from '@/pages/Contact';
 import DataDeletion from '@/pages/DataDeletion';
 import AccountDeletion from '@/pages/AccountDeletion';
 import CookiePolicy from '@/pages/CookiePolicy';
+import Admin from '@/pages/Admin';
 
 // Error Pages
 import NotFound from '@/pages/NotFound';
@@ -96,6 +97,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="admin"
+              element={
+                <ProtectedRoute>
+                  <Admin />
                 </ProtectedRoute>
               }
             />
