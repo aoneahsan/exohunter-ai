@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ScrollToTop } from '@/components/ScrollToTop';
+import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { useGlobalErrorHandler } from '@/hooks/useErrorHandler';
 import { initializeOneSignal } from '@/services/oneSignal';
 
 // Pages
@@ -33,15 +35,19 @@ import Forbidden from '@/pages/Forbidden';
 import Unauthorized from '@/pages/Unauthorized';
 
 function App() {
+  // Global error handler for unhandled errors
+  useGlobalErrorHandler();
+
   useEffect(() => {
     // Initialize OneSignal when app loads
     initializeOneSignal();
   }, []);
 
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
+    <ErrorBoundary>
+      <Router>
+        <ScrollToTop />
+        <Routes>
         <Route path="/" element={<Layout />}>
             {/* Public Routes */}
             <Route index element={<Landing />} />
@@ -104,7 +110,8 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
-    </Router>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

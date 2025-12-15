@@ -3,10 +3,10 @@
 ## 📏 GLOBAL RULES SYNC STATUS
 | Metric | Value | Last Confirmed |
 |--------|-------|----------------|
-| Global Rule Sections Expected | 32 | 2025-12-13 |
-| Global Chars Expected | ~14k | 2025-12-13 |
-| Claude Code Limit | 40.0k | 2025-12-13 |
-| This File Last Updated | 2025-12-13 | - |
+| Global Rule Sections Expected | 33 | 2025-12-15 |
+| Global Chars Expected | ~16k | 2025-12-15 |
+| Claude Code Limit | 40.0k | 2025-12-15 |
+| This File Last Updated | 2025-12-15 | - |
 
 ⚠️ Weekly: Confirm global rules count matches expected (±2 tolerance)
 ⚠️ If mismatch: Sync ~/.claude/CLAUDE.md from canonical source
@@ -31,7 +31,7 @@ ExoHunter AI - Exoplanet discovery and analysis platform using AI/ML
 ## Tech Stack
 - React 19 + TypeScript + Vite 7
 - Capacitor 8 (iOS/Android/PWA)
-- Firebase (Auth, Firestore, Storage, Analytics)
+- Firebase (Auth, Firestore, Analytics) + FilesHub (file storage)
 - TanStack React Query + Zustand
 - Radix UI + Tailwind CSS
 - Three.js + React Three Fiber
@@ -72,6 +72,7 @@ app-publish-assets/ # Store publishing assets
 ### 🎨 UI/UX Requirements
 - **Card-Based UI**: Use Radix UI card components with icon + title + description for checkboxes/radios/selects (<8 options). For 8+ options, use text with icon on left.
 - **NO Native HTML**: Only use Radix UI components. Never use native `<div>`, `<button>`, `<input>` with custom CSS.
+  - ⚠️ **Audit Status (2025-12-15)**: Project has extensive native HTML usage (layout divs, spans, lists). Gradual migration recommended for new code.
 - **Radix UI Theme**: ✅ Implemented - Theme settings in Settings page with dark/light/system modes, 8 accent colors, 3 font sizes. Cloud sync for authenticated users, localStorage for guests.
 - **Scroll-to-Top**: ✅ Implemented - Auto-scroll to top on route change (except hash fragments).
 - **Error Pages**: ✅ Implemented - Beautiful 404, 500, 403, 401 pages with space theme.
@@ -111,6 +112,24 @@ app-publish-assets/ # Store publishing assets
 - **Capacitor Plugins**: 19 plugins installed with comprehensive service layer in `src/services/capacitor.ts` (876 lines) and hooks in `src/hooks/useCapacitor.ts` (554 lines).
 - **Platform Support**: iOS, Android, Web (PWA)
 - **Storage**: Use `@capacitor/preferences` (NEVER localStorage/sessionStorage) for native platforms.
+- **Native Folders**: When adding android/ios folders, confirm all Capacitor plugins are properly configured.
+
+### 🚨 Error Handling
+- **Error Service**: `src/services/error-handler.ts` integrates Sentry (optional), Firebase Analytics, Clarity, Amplitude.
+- **Error Boundary**: `src/components/ErrorBoundary.tsx` catches React errors with space-themed UI.
+- **useErrorHandler Hook**: `src/hooks/useErrorHandler.ts` for component-level error handling.
+- **Graceful Degradation**: Only track errors for platforms with API keys configured - no errors for missing keys.
+
+### 📂 FilesHub Integration
+- **File Storage**: Use FilesHub API exclusively - NEVER Firebase Storage.
+- **Service**: `src/services/files-hub.ts` with upload, download, delete, list functions.
+- **Hook**: `src/hooks/useFilesHub.ts` with loading states and progress tracking.
+- **Rules**: Track files in Firestore, delete old before replacing, delete all on account deletion.
+
+### ↩️ Go-Back Buttons
+- **Rule**: Every page (except / and /dashboard) must have a go-back button in header.
+- **Absolute Routes**: Use absolute paths (e.g., /dashboard) not navigate(-1) to avoid history issues.
+- **Consistency**: Use ArrowLeft icon from lucide-react with consistent positioning.
 
 ---
 
@@ -122,6 +141,7 @@ app-publish-assets/ # Store publishing assets
 | Sitemap Page | ✅ Complete | Fuzzy search, categories, keywords |
 | Error Pages (404/500/403/401) | ✅ Complete | Beautiful space-themed design |
 | Analytics Integration | ✅ Complete | Firebase/Clarity/Amplitude |
+| Error Handling Service | ✅ Complete | Sentry/Firebase/Clarity/Amplitude |
 | Info Pages | ✅ Complete | Privacy/Terms/Contact/About/Deletion |
 | App Version in Footer | ✅ Complete | Native platforms via Capacitor |
 | Scroll-to-Top | ✅ Complete | Instant scroll, skip hash fragments |
@@ -130,6 +150,9 @@ app-publish-assets/ # Store publishing assets
 | .env.example | ✅ Complete | Documented with descriptions |
 | Capacitor Service Layer | ✅ Complete | 19 plugins with hooks |
 | App-Publish-Assets | ✅ Complete | Metadata, icons, screenshots |
+| FilesHub Integration | ✅ Complete | Service + hook for file uploads |
+| Go-Back Buttons | ✅ Complete | All pages have absolute back routes |
+| Error Boundary | ✅ Complete | Space-themed error UI |
 
 ---
 
@@ -137,7 +160,20 @@ app-publish-assets/ # Store publishing assets
 
 | Task | Frequency | Last Done | Next Due |
 |------|-----------|-----------|----------|
-| README.md Update | Every 2 weeks | 2025-12-13 | 2025-12-27 |
-| Project Knowledge Docs | Every 2 weeks | 2025-12-13 | 2025-12-27 |
-| Global CLAUDE.md Sync | Weekly | 2025-12-13 | 2025-12-20 |
-| Analytics Tracking Verify | Monthly | 2025-12-13 | 2026-01-13 |
+| README.md Update | Every 2 weeks | 2025-12-15 | 2025-12-29 |
+| Project Knowledge Docs | Every 2 weeks | 2025-12-15 | 2025-12-29 |
+| Global CLAUDE.md Sync | Weekly | 2025-12-15 | 2025-12-22 |
+| Analytics Tracking Verify | Monthly | 2025-12-15 | 2026-01-15 |
+| Big Request Run | Min 1 day gap | 2025-12-15 | 2025-12-16 |
+
+---
+
+## 🔄 Big Request Tracking
+**Last full project audit:** 2025-12-15
+- Useless docs removed
+- Error handling implemented
+- FilesHub integrated
+- Go-back buttons added
+- CLAUDE.md updated
+
+**Minimum wait before re-running:** 1 day (for most updates), 1 week (for full re-run)

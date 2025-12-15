@@ -26,13 +26,15 @@ ExoHunter AI is an advanced platform that leverages artificial intelligence and 
 
 - **React 19** + **TypeScript** - Modern UI library with type safety
 - **Vite 7** - Fast build tool and development server
-- **Firebase** (Auth, Firestore, Storage) - Backend services and authentication
-- **Capacitor 8** - Native iOS and Android support
+- **Firebase** (Auth, Firestore, Analytics) - Backend services and authentication
+- **FilesHub** - File storage service (replaces Firebase Storage)
+- **Capacitor 8** - Native iOS and Android support with 19 plugins
 - **Three.js** + **React Three Fiber** - 3D graphics and visualizations
 - **Radix UI** + **Tailwind CSS** - Component library and styling
 - **Zustand** - Lightweight state management
 - **TanStack Query** - Server state and data fetching
 - **Recharts** - Data visualization and charting
+- **Triple Analytics** - Firebase Analytics, Microsoft Clarity, Amplitude
 
 ## Getting Started
 
@@ -141,8 +143,16 @@ See `.env.example` for a complete list of available configuration options.
 
 The app will be deployed to your Firebase Hosting URL.
 
-## Contributing
+## Contributing / Code Access
 
+This is an **open-source project**, but repository access is granted to responsible contributors only. As a small team, we prioritize quality over quantity and want to add members who bring value to the project and community.
+
+**To request access:**
+1. Email us at aoneahsan@gmail.com
+2. Explain how you will contribute value to the project
+3. Our team will review your request and respond within 48 hours
+
+**For approved contributors:**
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
@@ -167,3 +177,5 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ---
 
 Built for NASA Space Apps Challenge 2025
+
+**Last Updated:** 2025-12-15

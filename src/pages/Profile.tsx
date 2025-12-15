@@ -13,12 +13,14 @@ import {
   Share2,
   Download,
   Mail,
-  ExternalLink
+  ExternalLink,
+  ArrowLeft
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Link } from 'react-router-dom';
 import {
   LineChart,
   Line,
@@ -225,6 +227,24 @@ export default function Profile() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
       <div className="max-w-7xl mx-auto">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-6"
+        >
+          <Link to="/dashboard">
+            <Button
+              variant="ghost"
+              className="text-gray-300 hover:text-white hover:bg-slate-800/50"
+            >
+              <ArrowLeft className="mr-2" size={18} />
+              <span className="hidden sm:inline">Back to Dashboard</span>
+              <span className="sm:hidden">Back</span>
+            </Button>
+          </Link>
+        </motion.div>
+
         {/* Profile Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

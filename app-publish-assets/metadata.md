@@ -101,7 +101,8 @@ Everyone
 
 ## Version Information
 - Version: 1.0.0
-- Release Date: December 2024
+- Release Date: December 2025
+- Last Updated: 2025-12-15
 
 ## What's New in Version 1.0.0
 Initial release featuring:

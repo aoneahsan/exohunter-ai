@@ -117,3 +117,37 @@ export interface LeaderboardEntry {
   accuracyScore: number;
   updatedAt: Timestamp;
 }
+
+// Re-export FilesHub types
+export type {
+  FileVisibility,
+  UploadResponse,
+  FileMetadata,
+  ListResponse,
+  DeleteResponse,
+  HealthResponse,
+  FilesHubError,
+  UploadOptions,
+  ListOptions,
+  FileValidationRules,
+  FileValidationResult,
+  FilesHubConfig,
+  UploadProgressEvent,
+  RateLimitError,
+  FileRecord,
+} from '@services/files-hub';
+
+// Re-export Error Handler types
+export {
+  ErrorSeverity,
+  ErrorCategory,
+} from './error-handler';
+export type {
+  ErrorContext,
+  ErrorMetadata,
+  IErrorHandlerService,
+  ErrorTrackingPlatform,
+  ErrorBoundaryState,
+  ErrorBoundaryProps,
+  ErrorBoundaryFallbackProps,
+} from './error-handler';

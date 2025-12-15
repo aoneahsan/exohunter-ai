@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Lock } from 'lucide-react';
+import { Search, Lock, ArrowLeft } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -9,6 +9,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 import { sitemapData, iconMap, type SitemapPage } from '@/config/sitemap';
 
 /**
@@ -120,6 +122,24 @@ const Sitemap: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-space-900 via-space-800 to-space-900 py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-6"
+        >
+          <Link to="/">
+            <Button
+              variant="ghost"
+              className="text-gray-300 hover:text-white hover:bg-slate-800/50"
+            >
+              <ArrowLeft className="mr-2" size={18} />
+              <span className="hidden sm:inline">Back to Home</span>
+              <span className="sm:hidden">Back</span>
+            </Button>
+          </Link>
+        </motion.div>
+
         {/* Header */}
         <div className="mb-8 space-y-4">
           <h1 className="text-4xl font-bold text-white sm:text-5xl">

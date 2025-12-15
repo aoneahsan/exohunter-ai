@@ -10,13 +10,15 @@ import {
   EyeOff,
   Lock,
   AlertTriangle,
-  CheckCircle2
+  CheckCircle2,
+  ArrowLeft
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useAuth } from '@/contexts/AuthContext';
+import { Link } from 'react-router-dom';
 import { NotificationSettings } from '@/components/NotificationSettings';
 import { ThemeSettings } from '@/components/ThemeSettings';
 import toast from 'react-hot-toast';
@@ -135,8 +137,26 @@ export default function Settings() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-6">
       <div className="max-w-4xl mx-auto">
+        {/* Back Button */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-6"
+        >
+          <Link to="/dashboard">
+            <Button
+              variant="ghost"
+              className="text-gray-300 hover:text-white hover:bg-slate-800/50"
+            >
+              <ArrowLeft className="mr-2" size={18} />
+              <span className="hidden sm:inline">Back to Dashboard</span>
+              <span className="sm:hidden">Back</span>
+            </Button>
+          </Link>
+        </motion.div>
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-8"
