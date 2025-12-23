@@ -162,9 +162,34 @@ app-publish-assets/ # Store publishing assets
 |------|-----------|-----------|----------|
 | README.md Update | Every 2 weeks | 2025-12-15 | 2025-12-29 |
 | Project Knowledge Docs | Every 2 weeks | 2025-12-15 | 2025-12-29 |
+| Portfolio Content File Update | Weekly (Sundays) | 2025-12-23 | 2025-12-30 |
 | Global CLAUDE.md Sync | Weekly | 2025-12-15 | 2025-12-22 |
 | Analytics Tracking Verify | Monthly | 2025-12-15 | 2026-01-15 |
 | Big Request Run | Min 1 day gap | 2025-12-15 | 2025-12-16 |
+
+### 📄 Portfolio Content File Maintenance
+- **File:** `exohunter-ai-portfolio-content-UPDATED-YYYY-MM-DD.md`
+- **Purpose:** Comprehensive project documentation for portfolio, resume, CV, social media posts
+- **Update Triggers:**
+  - Weekly on Sundays (mandatory)
+  - When new features are added
+  - When major milestones are reached
+  - When metrics change significantly
+  - When new achievements are earned
+  - When competition results are announced
+
+**Weekly Update Checklist:**
+- [ ] Update version number
+- [ ] Update "Last Updated" date in file
+- [ ] Add entry to Update History table (max 10 records)
+- [ ] Update metrics (users, detections, downloads, etc.)
+- [ ] Add new features to feature list if any
+- [ ] Update tech stack if dependencies changed
+- [ ] Review and update hashtags if trending topics changed
+- [ ] Update live URL if domain changed
+- [ ] Update contact info if changed
+- [ ] Rename file with new date: `exohunter-ai-portfolio-content-UPDATED-YYYY-MM-DD.md`
+- [ ] Delete old version after renaming
 
 ---
 
