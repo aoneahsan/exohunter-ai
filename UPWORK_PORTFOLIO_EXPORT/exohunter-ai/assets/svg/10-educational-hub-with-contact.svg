@@ -1,0 +1,183 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B0E1F"/>
+      <stop offset="100%" style="stop-color:#1a1f3a"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad10" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad10)"/>
+
+  <!-- Header -->
+  <text x="960" y="70" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">Educational Hub &amp; Learning System</text>
+  <text x="960" y="105" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#9bb5ff" text-anchor="middle">From Curious Beginner to Exoplanet Expert</text>
+
+  <!-- Tutorial System -->
+  <g transform="translate(120, 150)">
+    <rect x="0" y="0" width="520" height="380" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    <text x="40" y="50" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">Interactive Tutorials</text>
+    <text x="40" y="80" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#667eea">Step-by-Step Learning Paths</text>
+
+    <!-- Tutorial Steps -->
+    <g transform="translate(40, 110)">
+      <rect x="0" y="0" width="440" height="50" rx="8" fill="#667eea" opacity="0.2"/>
+      <circle cx="30" cy="25" r="15" fill="#4ade80"/>
+      <text x="30" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#0B0E1F" text-anchor="middle" font-weight="700">1</text>
+      <text x="60" y="22" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="600">Introduction to Exoplanets</text>
+      <text x="60" y="40" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">What are exoplanets? History of discovery</text>
+    </g>
+
+    <g transform="translate(40, 170)">
+      <rect x="0" y="0" width="440" height="50" rx="8" fill="#667eea" opacity="0.2"/>
+      <circle cx="30" cy="25" r="15" fill="#4ade80"/>
+      <text x="30" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#0B0E1F" text-anchor="middle" font-weight="700">2</text>
+      <text x="60" y="22" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="600">Transit Detection Method</text>
+      <text x="60" y="40" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">Understanding light curves and dips</text>
+    </g>
+
+    <g transform="translate(40, 230)">
+      <rect x="0" y="0" width="440" height="50" rx="8" fill="#667eea" opacity="0.2"/>
+      <circle cx="30" cy="25" r="15" fill="#667eea"/>
+      <text x="30" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+      <text x="60" y="22" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="600">Using ExoHunter AI</text>
+      <text x="60" y="40" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">Hands-on detection exercises</text>
+    </g>
+
+    <g transform="translate(40, 290)">
+      <rect x="0" y="0" width="440" height="50" rx="8" fill="#667eea" opacity="0.2"/>
+      <circle cx="30" cy="25" r="15" fill="#764ba2" opacity="0.5"/>
+      <text x="30" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+      <text x="60" y="22" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="600">Advanced Analysis</text>
+      <text x="60" y="40" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">ML algorithms and data interpretation</text>
+    </g>
+  </g>
+
+  <!-- Quiz System -->
+  <g transform="translate(700, 150)">
+    <rect x="0" y="0" width="520" height="380" rx="16" fill="#1a1f3a" stroke="#4ade80" stroke-width="2"/>
+    <text x="40" y="50" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">Knowledge Assessment</text>
+    <text x="40" y="80" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">Interactive Quizzes &amp; Challenges</text>
+
+    <!-- Quiz Features -->
+    <g transform="translate(40, 110)">
+      <rect x="0" y="0" width="210" height="80" rx="8" fill="#4ade80" opacity="0.15"/>
+      <text x="105" y="35" font-family="Inter, system-ui, sans-serif" font-size="28" fill="#4ade80" text-anchor="middle" font-weight="700">50+</text>
+      <text x="105" y="60" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff" text-anchor="middle">Quiz Questions</text>
+    </g>
+
+    <g transform="translate(270, 110)">
+      <rect x="0" y="0" width="210" height="80" rx="8" fill="#667eea" opacity="0.15"/>
+      <text x="105" y="35" font-family="Inter, system-ui, sans-serif" font-size="28" fill="#667eea" text-anchor="middle" font-weight="700">10</text>
+      <text x="105" y="60" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff" text-anchor="middle">Topic Modules</text>
+    </g>
+
+    <g transform="translate(40, 210)">
+      <rect x="0" y="0" width="440" height="45" rx="8" fill="#764ba2" opacity="0.15"/>
+      <text x="220" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#764ba2" text-anchor="middle">Adaptive Difficulty - Questions adjust to your level</text>
+    </g>
+
+    <g transform="translate(40, 270)">
+      <rect x="0" y="0" width="440" height="45" rx="8" fill="#FFA000" opacity="0.15"/>
+      <text x="220" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#FFA000" text-anchor="middle">Instant Feedback - Learn from every answer</text>
+    </g>
+
+    <g transform="translate(40, 330)">
+      <rect x="0" y="0" width="440" height="45" rx="8" fill="#E54B4B" opacity="0.15"/>
+      <text x="220" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#E54B4B" text-anchor="middle">Progress Tracking - See your improvement over time</text>
+    </g>
+  </g>
+
+  <!-- Gamification -->
+  <g transform="translate(1280, 150)">
+    <rect x="0" y="0" width="520" height="380" rx="16" fill="#1a1f3a" stroke="#764ba2" stroke-width="2"/>
+    <text x="40" y="50" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">Gamification System</text>
+    <text x="40" y="80" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#764ba2">Achievements, Badges &amp; Leaderboards</text>
+
+    <!-- Achievement Badges -->
+    <g transform="translate(40, 110)">
+      <circle cx="50" cy="40" r="35" fill="#FFA000" opacity="0.3"/>
+      <text x="50" y="48" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#FFA000" text-anchor="middle">★</text>
+      <text x="130" y="35" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="600">First Discovery</text>
+      <text x="130" y="55" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">Complete your first detection</text>
+    </g>
+
+    <g transform="translate(40, 180)">
+      <circle cx="50" cy="40" r="35" fill="#4ade80" opacity="0.3"/>
+      <text x="50" y="48" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#4ade80" text-anchor="middle">🔬</text>
+      <text x="130" y="35" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="600">Scientist Badge</text>
+      <text x="130" y="55" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">Analyze 100 light curves</text>
+    </g>
+
+    <g transform="translate(40, 250)">
+      <circle cx="50" cy="40" r="35" fill="#667eea" opacity="0.3"/>
+      <text x="50" y="48" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#667eea" text-anchor="middle">🏆</text>
+      <text x="130" y="35" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" font-weight="600">Quiz Champion</text>
+      <text x="130" y="55" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">Score 100% on any quiz</text>
+    </g>
+
+    <g transform="translate(40, 320)">
+      <rect x="0" y="0" width="440" height="45" rx="8" fill="url(#purpleGrad10)" opacity="0.3"/>
+      <text x="220" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="600">Global Leaderboard - Compete with explorers worldwide</text>
+    </g>
+  </g>
+
+  <!-- Learning Content Stats -->
+  <rect x="120" y="570" width="1680" height="180" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+  <text x="180" y="620" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#ffffff" font-weight="600">Educational Content Library</text>
+
+  <g transform="translate(180, 650)">
+    <rect x="0" y="0" width="300" height="80" rx="8" fill="#667eea" opacity="0.15"/>
+    <text x="150" y="35" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#667eea" text-anchor="middle" font-weight="700">15+</text>
+    <text x="150" y="60" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Video Lessons</text>
+  </g>
+
+  <g transform="translate(530, 650)">
+    <rect x="0" y="0" width="300" height="80" rx="8" fill="#4ade80" opacity="0.15"/>
+    <text x="150" y="35" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#4ade80" text-anchor="middle" font-weight="700">30+</text>
+    <text x="150" y="60" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Interactive Articles</text>
+  </g>
+
+  <g transform="translate(880, 650)">
+    <rect x="0" y="0" width="300" height="80" rx="8" fill="#764ba2" opacity="0.15"/>
+    <text x="150" y="35" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#764ba2" text-anchor="middle" font-weight="700">20+</text>
+    <text x="150" y="60" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Hands-on Exercises</text>
+  </g>
+
+  <g transform="translate(1230, 650)">
+    <rect x="0" y="0" width="300" height="80" rx="8" fill="#FFA000" opacity="0.15"/>
+    <text x="150" y="35" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#FFA000" text-anchor="middle" font-weight="700">NASA</text>
+    <text x="150" y="60" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Official Data Sources</text>
+  </g>
+
+  <!-- Certification Path -->
+  <g transform="translate(120, 790)">
+    <rect x="0" y="0" width="1680" height="100" rx="16" fill="url(#purpleGrad10)" opacity="0.3"/>
+    <text x="840" y="40" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="600">Certification Path: Beginner → Intermediate → Advanced → Expert Exoplanet Hunter</text>
+    <text x="840" y="70" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Complete tutorials, pass quizzes, earn badges, and receive your ExoHunter certification</text>
+  </g>
+
+  <!-- Footer with Contact Info -->
+  <rect x="0" y="920" width="1920" height="160" fill="#0B0E1F"/>
+  <line x1="0" y1="920" x2="1920" y2="920" stroke="#667eea" stroke-width="2"/>
+
+  <text x="160" y="970" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Live Demo:</text>
+  <text x="260" y="970" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://exohunter-ai.web.app</text>
+
+  <text x="160" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Portfolio Hub:</text>
+  <text x="280" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://aoneahsan.com/projects</text>
+
+  <text x="700" y="970" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Contact:</text>
+  <text x="780" y="970" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff">aoneahsan@gmail.com</text>
+
+  <text x="700" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">WhatsApp:</text>
+  <text x="800" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff">+92 304 661 9706</text>
+
+  <text x="1500" y="970" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Ahsan Mahmood</text>
+  <text x="1500" y="1000" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Full-Stack Engineer</text>
+  <text x="1500" y="1025" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#667eea">NASA Space Apps Challenge 2025</text>
+</svg>

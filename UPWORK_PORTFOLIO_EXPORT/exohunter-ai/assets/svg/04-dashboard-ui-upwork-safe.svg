@@ -1,0 +1,171 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad4s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B0E1F"/>
+      <stop offset="100%" style="stop-color:#1a1f3a"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad4s" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad4s)"/>
+
+  <!-- Header -->
+  <text x="960" y="70" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">Dashboard UI Concept</text>
+  <text x="960" y="105" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#9bb5ff" text-anchor="middle">Personal Mission Control Center</text>
+
+  <!-- Mock Dashboard Interface -->
+  <!-- Sidebar -->
+  <rect x="80" y="150" width="220" height="700" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+  <text x="190" y="195" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600" text-anchor="middle">ExoHunter AI</text>
+
+  <!-- Nav Items -->
+  <rect x="100" y="230" width="180" height="40" rx="8" fill="#667eea" opacity="0.8"/>
+  <text x="190" y="256" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Dashboard</text>
+
+  <rect x="100" y="285" width="180" height="40" rx="8" fill="transparent"/>
+  <text x="190" y="311" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Explorer</text>
+
+  <rect x="100" y="340" width="180" height="40" rx="8" fill="transparent"/>
+  <text x="190" y="366" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Analyzer</text>
+
+  <rect x="100" y="395" width="180" height="40" rx="8" fill="transparent"/>
+  <text x="190" y="421" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Discoveries</text>
+
+  <rect x="100" y="450" width="180" height="40" rx="8" fill="transparent"/>
+  <text x="190" y="476" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Learn</text>
+
+  <rect x="100" y="505" width="180" height="40" rx="8" fill="transparent"/>
+  <text x="190" y="531" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Profile</text>
+
+  <rect x="100" y="560" width="180" height="40" rx="8" fill="transparent"/>
+  <text x="190" y="586" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff" text-anchor="middle">Settings</text>
+
+  <!-- Main Content Area -->
+  <!-- Stats Cards Row -->
+  <g transform="translate(340, 150)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="45" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Total Detections</text>
+    <text x="30" y="85" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#4ade80" font-weight="700">247</text>
+    <text x="120" y="85" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">+12%</text>
+  </g>
+
+  <g transform="translate(640, 150)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="45" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Accuracy Score</text>
+    <text x="30" y="85" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#667eea" font-weight="700">94.2%</text>
+  </g>
+
+  <g transform="translate(940, 150)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="45" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Global Rank</text>
+    <text x="30" y="85" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#764ba2" font-weight="700">#42</text>
+    <text x="100" y="85" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">Top 5%</text>
+  </g>
+
+  <g transform="translate(1240, 150)">
+    <rect x="0" y="0" width="280" height="120" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="45" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Contribution Points</text>
+    <text x="30" y="85" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#FFD700" font-weight="700">8,450</text>
+  </g>
+
+  <!-- Activity Chart -->
+  <g transform="translate(340, 300)">
+    <rect x="0" y="0" width="700" height="280" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="40" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Weekly Activity</text>
+
+    <rect x="60" y="180" width="60" height="60" rx="4" fill="#667eea" opacity="0.6"/>
+    <text x="90" y="255" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff" text-anchor="middle">Mon</text>
+
+    <rect x="140" y="140" width="60" height="100" rx="4" fill="#667eea" opacity="0.7"/>
+    <text x="170" y="255" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff" text-anchor="middle">Tue</text>
+
+    <rect x="220" y="100" width="60" height="140" rx="4" fill="#667eea" opacity="0.8"/>
+    <text x="250" y="255" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff" text-anchor="middle">Wed</text>
+
+    <rect x="300" y="80" width="60" height="160" rx="4" fill="#4ade80"/>
+    <text x="330" y="255" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff" text-anchor="middle">Thu</text>
+
+    <rect x="380" y="120" width="60" height="120" rx="4" fill="#667eea" opacity="0.75"/>
+    <text x="410" y="255" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff" text-anchor="middle">Fri</text>
+
+    <rect x="460" y="160" width="60" height="80" rx="4" fill="#667eea" opacity="0.5"/>
+    <text x="490" y="255" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff" text-anchor="middle">Sat</text>
+
+    <rect x="540" y="150" width="60" height="90" rx="4" fill="#667eea" opacity="0.55"/>
+    <text x="570" y="255" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff" text-anchor="middle">Sun</text>
+  </g>
+
+  <!-- Quick Actions -->
+  <g transform="translate(1060, 300)">
+    <rect x="0" y="0" width="460" height="280" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="40" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Quick Actions</text>
+
+    <rect x="30" y="70" width="190" height="80" rx="8" fill="url(#purpleGrad4s)"/>
+    <text x="125" y="115" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Start Analysis</text>
+
+    <rect x="240" y="70" width="190" height="80" rx="8" fill="#667eea" opacity="0.5"/>
+    <text x="335" y="115" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Browse Discoveries</text>
+
+    <rect x="30" y="170" width="190" height="80" rx="8" fill="#667eea" opacity="0.5"/>
+    <text x="125" y="215" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Continue Learning</text>
+
+    <rect x="240" y="170" width="190" height="80" rx="8" fill="#667eea" opacity="0.5"/>
+    <text x="335" y="215" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">View Profile</text>
+  </g>
+
+  <!-- Recent Activity -->
+  <g transform="translate(340, 610)">
+    <rect x="0" y="0" width="700" height="240" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="40" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Recent Activity</text>
+
+    <rect x="30" y="70" width="640" height="45" rx="6" fill="#667eea" opacity="0.1"/>
+    <text x="50" y="98" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#ffffff">Detected exoplanet candidate near Kepler-442</text>
+    <text x="590" y="98" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80">2h ago</text>
+
+    <rect x="30" y="125" width="640" height="45" rx="6" fill="#667eea" opacity="0.1"/>
+    <text x="50" y="153" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#ffffff">Completed tutorial: Reading Light Curves</text>
+    <text x="590" y="153" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#9bb5ff">5h ago</text>
+
+    <rect x="30" y="180" width="640" height="45" rx="6" fill="#667eea" opacity="0.1"/>
+    <text x="50" y="208" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#ffffff">Achievement unlocked: Transit Hunter</text>
+    <text x="590" y="208" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#FFD700">1d ago</text>
+  </g>
+
+  <!-- Achievements Progress -->
+  <g transform="translate(1060, 610)">
+    <rect x="0" y="0" width="460" height="240" rx="12" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+    <text x="30" y="40" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Achievement Progress</text>
+
+    <text x="30" y="85" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">First Discovery</text>
+    <rect x="30" y="95" width="400" height="10" rx="5" fill="#667eea" opacity="0.3"/>
+    <rect x="30" y="95" width="400" height="10" rx="5" fill="#4ade80"/>
+    <text x="410" y="85" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80">Done</text>
+
+    <text x="30" y="135" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Transit Hunter (10)</text>
+    <rect x="30" y="145" width="400" height="10" rx="5" fill="#667eea" opacity="0.3"/>
+    <rect x="30" y="145" width="280" height="10" rx="5" fill="#667eea"/>
+    <text x="410" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#667eea">7/10</text>
+
+    <text x="30" y="185" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Accuracy Master</text>
+    <rect x="30" y="195" width="400" height="10" rx="5" fill="#667eea" opacity="0.3"/>
+    <rect x="30" y="195" width="200" height="10" rx="5" fill="#764ba2"/>
+    <text x="410" y="185" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#764ba2">50%</text>
+  </g>
+
+  <!-- Footer (Upwork Safe) -->
+  <rect x="0" y="940" width="1920" height="140" fill="#0B0E1F"/>
+  <line x1="0" y1="940" x2="1920" y2="940" stroke="#667eea" stroke-width="2"/>
+
+  <text x="160" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Live Demo:</text>
+  <text x="260" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://exohunter-ai.web.app</text>
+
+  <text x="700" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Portfolio Hub:</text>
+  <text x="820" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://aoneahsan.com/projects</text>
+
+  <text x="1500" y="1000" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Ahsan Mahmood</text>
+  <text x="1500" y="1025" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Full-Stack Engineer</text>
+</svg>

@@ -1,0 +1,113 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad7s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B0E1F"/>
+      <stop offset="100%" style="stop-color:#1a1f3a"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad7s" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad7s)"/>
+
+  <!-- Header -->
+  <text x="960" y="70" font-family="Inter, system-ui, sans-serif" font-size="42" font-weight="700" fill="#ffffff" text-anchor="middle">External Integrations</text>
+  <text x="960" y="105" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#9bb5ff" text-anchor="middle">Connecting with World-Class Services</text>
+
+  <!-- Center Hub -->
+  <circle cx="960" cy="480" r="100" fill="url(#purpleGrad7s)" opacity="0.8"/>
+  <text x="960" y="470" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="600">ExoHunter</text>
+  <text x="960" y="495" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="600">AI</text>
+
+  <!-- Firebase Integration -->
+  <g transform="translate(280, 280)">
+    <rect x="0" y="0" width="300" height="180" rx="16" fill="#1a1f3a" stroke="#FFA000" stroke-width="2"/>
+    <circle cx="50" cy="50" r="25" fill="#FFA000" opacity="0.3"/>
+    <text x="50" y="58" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#FFA000" text-anchor="middle">F</text>
+    <text x="90" y="55" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#ffffff" font-weight="600">Firebase</text>
+    <text x="30" y="95" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Authentication</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Cloud Firestore</text>
+    <text x="30" y="135" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Hosting &amp; Analytics</text>
+    <text x="30" y="155" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Cloud Functions</text>
+  </g>
+  <line x1="580" y1="370" x2="860" y2="420" stroke="#FFA000" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- NASA APIs Integration -->
+  <g transform="translate(1340, 280)">
+    <rect x="0" y="0" width="300" height="180" rx="16" fill="#1a1f3a" stroke="#1E88E5" stroke-width="2"/>
+    <circle cx="50" cy="50" r="25" fill="#1E88E5" opacity="0.3"/>
+    <text x="50" y="58" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#1E88E5" text-anchor="middle">N</text>
+    <text x="90" y="55" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#ffffff" font-weight="600">NASA APIs</text>
+    <text x="30" y="95" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Exoplanet Archive</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">TESS Mission Data</text>
+    <text x="30" y="135" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Kepler Data Access</text>
+    <text x="30" y="155" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Image Library</text>
+  </g>
+  <line x1="1340" y1="370" x2="1060" y2="420" stroke="#1E88E5" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- OneSignal Integration -->
+  <g transform="translate(280, 540)">
+    <rect x="0" y="0" width="300" height="180" rx="16" fill="#1a1f3a" stroke="#E54B4B" stroke-width="2"/>
+    <circle cx="50" cy="50" r="25" fill="#E54B4B" opacity="0.3"/>
+    <text x="50" y="58" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#E54B4B" text-anchor="middle">O</text>
+    <text x="90" y="55" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#ffffff" font-weight="600">OneSignal</text>
+    <text x="30" y="95" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Web Push</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">iOS Notifications</text>
+    <text x="30" y="135" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Android Notifications</text>
+    <text x="30" y="155" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Segment Targeting</text>
+  </g>
+  <line x1="580" y1="630" x2="860" y2="540" stroke="#E54B4B" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- FilesHub Integration -->
+  <g transform="translate(1340, 540)">
+    <rect x="0" y="0" width="300" height="180" rx="16" fill="#1a1f3a" stroke="#4ade80" stroke-width="2"/>
+    <circle cx="50" cy="50" r="25" fill="#4ade80" opacity="0.3"/>
+    <text x="50" y="58" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#4ade80" text-anchor="middle">FH</text>
+    <text x="90" y="55" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#ffffff" font-weight="600">FilesHub</text>
+    <text x="30" y="95" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">File Upload API</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Secure Storage</text>
+    <text x="30" y="135" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Progress Tracking</text>
+    <text x="30" y="155" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">File Management</text>
+  </g>
+  <line x1="1340" y1="630" x2="1060" y2="540" stroke="#4ade80" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Analytics Row -->
+  <rect x="120" y="780" width="1680" height="130" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+  <text x="180" y="820" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#667eea" font-weight="600">Triple Analytics Integration</text>
+
+  <g transform="translate(200, 850)">
+    <rect x="0" y="0" width="360" height="45" rx="8" fill="#667eea" opacity="0.2"/>
+    <text x="180" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#667eea" text-anchor="middle">Firebase Analytics (GA4)</text>
+  </g>
+
+  <g transform="translate(620, 850)">
+    <rect x="0" y="0" width="360" height="45" rx="8" fill="#764ba2" opacity="0.2"/>
+    <text x="180" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#764ba2" text-anchor="middle">Amplitude</text>
+  </g>
+
+  <g transform="translate(1040, 850)">
+    <rect x="0" y="0" width="360" height="45" rx="8" fill="#4ade80" opacity="0.2"/>
+    <text x="180" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80" text-anchor="middle">Microsoft Clarity</text>
+  </g>
+
+  <g transform="translate(1460, 850)">
+    <rect x="0" y="0" width="280" height="45" rx="8" fill="#E54B4B" opacity="0.2"/>
+    <text x="140" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#E54B4B" text-anchor="middle">Sentry (Error Tracking)</text>
+  </g>
+
+  <!-- Footer (Upwork Safe) -->
+  <rect x="0" y="940" width="1920" height="140" fill="#0B0E1F"/>
+  <line x1="0" y1="940" x2="1920" y2="940" stroke="#667eea" stroke-width="2"/>
+
+  <text x="160" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Live Demo:</text>
+  <text x="260" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://exohunter-ai.web.app</text>
+
+  <text x="700" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Portfolio Hub:</text>
+  <text x="820" y="1000" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://aoneahsan.com/projects</text>
+
+  <text x="1500" y="1000" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Ahsan Mahmood</text>
+  <text x="1500" y="1025" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Full-Stack Engineer</text>
+</svg>

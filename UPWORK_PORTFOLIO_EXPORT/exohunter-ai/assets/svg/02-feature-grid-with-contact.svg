@@ -1,0 +1,160 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0B0E1F"/>
+      <stop offset="100%" style="stop-color:#1a1f3a"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad2)"/>
+
+  <!-- Header -->
+  <text x="960" y="80" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="#ffffff" text-anchor="middle">Core Features</text>
+  <text x="960" y="120" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#9bb5ff" text-anchor="middle">ExoHunter AI - Complete Feature Set</text>
+
+  <!-- Feature Grid (3x2) -->
+  <!-- Row 1 -->
+  <g transform="translate(120, 170)">
+    <rect x="0" y="0" width="520" height="240" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    <rect x="30" y="30" width="60" height="60" rx="12" fill="url(#purpleGrad2)"/>
+    <text x="60" y="70" font-family="Inter, system-ui, sans-serif" font-size="28" fill="#ffffff" text-anchor="middle">AI</text>
+    <text x="110" y="55" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">AI Detection Engine</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">CNN+LSTM neural networks analyze telescope</text>
+    <text x="30" y="138" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">light curve data with 90%+ accuracy</text>
+    <rect x="30" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="80" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">4 Methods</text>
+    <rect x="145" y="165" width="120" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="205" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Batch Processing</text>
+    <rect x="280" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="330" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Real-time</text>
+  </g>
+
+  <g transform="translate(700, 170)">
+    <rect x="0" y="0" width="520" height="240" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    <rect x="30" y="30" width="60" height="60" rx="12" fill="url(#purpleGrad2)"/>
+    <text x="60" y="70" font-family="Inter, system-ui, sans-serif" font-size="28" fill="#ffffff" text-anchor="middle">3D</text>
+    <text x="110" y="55" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">3D Visualization</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">Interactive Three.js orbital mechanics</text>
+    <text x="30" y="138" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">with WebGL-powered planet rendering</text>
+    <rect x="30" y="165" width="120" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="90" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Orbital Mechanics</text>
+    <rect x="165" y="165" width="120" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="225" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Habitable Zones</text>
+    <rect x="300" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="350" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Interactive</text>
+  </g>
+
+  <g transform="translate(1280, 170)">
+    <rect x="0" y="0" width="520" height="240" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    <rect x="30" y="30" width="60" height="60" rx="12" fill="url(#purpleGrad2)"/>
+    <text x="60" y="65" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">EDU</text>
+    <text x="110" y="55" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">Learning Hub</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">8 comprehensive tutorials covering</text>
+    <text x="30" y="138" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">206 minutes of educational content</text>
+    <rect x="30" y="165" width="80" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="70" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Videos</text>
+    <rect x="125" y="165" width="80" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="165" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Quizzes</text>
+    <rect x="220" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="270" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Certificates</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g transform="translate(120, 450)">
+    <rect x="0" y="0" width="520" height="240" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    <rect x="30" y="30" width="60" height="60" rx="12" fill="url(#purpleGrad2)"/>
+    <text x="60" y="68" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">COM</text>
+    <text x="110" y="55" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">Community Feed</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">Global discovery sharing platform with</text>
+    <text x="30" y="138" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">voting, validation, and collaboration</text>
+    <rect x="30" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="80" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Voting System</text>
+    <rect x="145" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="195" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Fuzzy Search</text>
+    <rect x="260" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="310" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Social Share</text>
+  </g>
+
+  <g transform="translate(700, 450)">
+    <rect x="0" y="0" width="520" height="240" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    <rect x="30" y="30" width="60" height="60" rx="12" fill="url(#purpleGrad2)"/>
+    <text x="60" y="68" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">MOB</text>
+    <text x="110" y="55" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">Cross-Platform</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">Native iOS/Android via Capacitor 8</text>
+    <text x="30" y="138" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">with 19 integrated native plugins</text>
+    <rect x="30" y="165" width="80" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="70" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">PWA</text>
+    <rect x="125" y="165" width="70" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="160" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">iOS</text>
+    <rect x="210" y="165" width="90" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="255" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Android</text>
+    <rect x="315" y="165" width="100" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="365" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">19 Plugins</text>
+  </g>
+
+  <g transform="translate(1280, 450)">
+    <rect x="0" y="0" width="520" height="240" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="2"/>
+    <rect x="30" y="30" width="60" height="60" rx="12" fill="url(#purpleGrad2)"/>
+    <text x="60" y="68" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">ACH</text>
+    <text x="110" y="55" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#ffffff" font-weight="600">Achievements</text>
+    <text x="30" y="115" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">Gamification system with 6 badge types</text>
+    <text x="30" y="138" font-family="Inter, system-ui, sans-serif" font-size="15" fill="#9bb5ff">across 5 rarity levels</text>
+    <rect x="30" y="165" width="80" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="70" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Badges</text>
+    <rect x="125" y="165" width="80" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="165" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Progress</text>
+    <rect x="220" y="165" width="90" height="28" rx="6" fill="#667eea" opacity="0.3"/>
+    <text x="265" y="184" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#4ade80" text-anchor="middle">Leaderboard</text>
+  </g>
+
+  <!-- Stats Bar -->
+  <rect x="120" y="730" width="1680" height="100" rx="16" fill="#1a1f3a" stroke="#667eea" stroke-width="1"/>
+  <g transform="translate(200, 780)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#4ade80" font-weight="700">24</text>
+    <text x="0" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Pages</text>
+  </g>
+  <g transform="translate(420, 780)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#4ade80" font-weight="700">82+</text>
+    <text x="0" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Components</text>
+  </g>
+  <g transform="translate(680, 780)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#4ade80" font-weight="700">19</text>
+    <text x="0" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Native Plugins</text>
+  </g>
+  <g transform="translate(920, 780)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#4ade80" font-weight="700">50+</text>
+    <text x="0" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Analytics Events</text>
+  </g>
+  <g transform="translate(1180, 780)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#4ade80" font-weight="700">206</text>
+    <text x="0" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Tutorial Minutes</text>
+  </g>
+  <g transform="translate(1440, 780)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="36" fill="#4ade80" font-weight="700">0</text>
+    <text x="0" y="25" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Build Warnings</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="0" y="940" width="1920" height="140" fill="#0B0E1F"/>
+  <line x1="0" y1="940" x2="1920" y2="940" stroke="#667eea" stroke-width="2"/>
+
+  <text x="160" y="985" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Live Demo:</text>
+  <text x="260" y="985" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://exohunter-ai.web.app</text>
+
+  <text x="160" y="1015" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Portfolio:</text>
+  <text x="250" y="1015" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#4ade80">https://aoneahsan.com/projects</text>
+
+  <text x="960" y="985" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">Email:</text>
+  <text x="1020" y="985" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff">aoneahsan@gmail.com</text>
+
+  <text x="960" y="1015" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#9bb5ff">WhatsApp:</text>
+  <text x="1055" y="1015" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff">+923046619706</text>
+
+  <text x="1500" y="1000" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#ffffff" font-weight="600">Ahsan Mahmood</text>
+  <text x="1500" y="1025" font-family="Inter, system-ui, sans-serif" font-size="13" fill="#9bb5ff">Full-Stack Engineer</text>
+</svg>
