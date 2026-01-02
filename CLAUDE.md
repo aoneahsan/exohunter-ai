@@ -21,7 +21,7 @@
 | **Config File** | vite.config.ts |
 | **Global Registry** | ~/.dev-ports.json |
 
-**Run dev server:** `yarn dev` → http://localhost:5994
+**Run dev server:** `pnpm dev` → http://localhost:5994
 
 ---
 
@@ -58,12 +58,12 @@ app-publish-assets/ # Store publishing assets
 `@/` → src/, `@components/` → src/components/, `@pages/` → src/pages/, etc.
 
 ## Available Scripts
-- `yarn dev` - Start dev server (port 5994)
-- `yarn build` - Production build
-- `yarn lint` - Run ESLint
-- `yarn preview` - Preview production build
-- `yarn type-check` - TypeScript type checking
-- `yarn format` - Format code with Prettier
+- `pnpm dev` - Start dev server (port 5994)
+- `pnpm build` - Production build
+- `pnpm lint` - Run ESLint
+- `pnpm preview` - Preview production build
+- `pnpm type-check` - TypeScript type checking
+- `pnpm format` - Format code with Prettier
 
 ---
 
